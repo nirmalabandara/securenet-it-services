@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "start": "vite",
     "build": "node -e \"console.log('SecureNet is a static site ready to upload to a web host.')\""
   }
 }
