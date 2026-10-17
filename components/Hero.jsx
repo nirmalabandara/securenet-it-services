@@ -75,11 +75,11 @@ export default function Hero({ onOpenRequest }) {
           <div className="arch-image-card">
             <div className="arch-image-wrapper">
               <Image
-                src="/images/hero-engineer.jpg"
-                alt="SecureNet Lead Technology Consultant"
+                src="/images/hero-team.jpg"
+                alt="SecureNet Technical Engineering Team Collaborating in Colombo"
                 width={520}
-                height={620}
-                className="hero-main-portrait"
+                height={460}
+                className="hero-main-portrait hero-team-photo"
                 priority
               />
             </div>
