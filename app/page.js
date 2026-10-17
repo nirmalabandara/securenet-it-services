@@ -86,7 +86,6 @@ export default function HomePage() {
     <>
       <Navbar
         onOpenRequest={openRequest}
-        onOpenAdmin={() => setAdminOpen(true)}
       />
 
       <main id="top">
@@ -99,7 +98,7 @@ export default function HomePage() {
         <CtaBanner onOpenRequest={openRequest} />
       </main>
 
-      <Footer onOpenAdmin={() => setAdminOpen(true)} />
+      <Footer />
 
       {requestOpen && (
         <RequestModal

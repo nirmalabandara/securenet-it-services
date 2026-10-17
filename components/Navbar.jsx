@@ -7,7 +7,7 @@ import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
 import { WHATSAPP, WHATSAPP_DISPLAY } from '@/lib/constants';
 
-export default function Navbar({ onOpenRequest, onOpenAdmin }) {
+export default function Navbar({ onOpenRequest }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();

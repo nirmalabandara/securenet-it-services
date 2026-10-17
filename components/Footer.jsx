@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Logo from './Logo';
 import { EMAIL, WHATSAPP, WHATSAPP_DISPLAY, PHONE_DISPLAY, ADDRESS_PRIMARY } from '@/lib/constants';
 
-export default function Footer({ onOpenAdmin }) {
+export default function Footer() {
   return (
     <footer className="footer-architectural">
       <div className="shell footer-top">
