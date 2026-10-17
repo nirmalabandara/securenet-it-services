@@ -14,15 +14,15 @@ export default function Coverage({ onOpenRequest }) {
         <div className="section-header-split">
           <div className="section-header-copy">
             <div className="eyebrow">
-              <span className="num">04 /</span> OPERATIONAL DISPATCH &amp; OVERSEAS BRIDGES
+              <span className="num">04 /</span> COLOMBO STUDIO &amp; OVERSEAS BRIDGES
             </div>
             <h2>
-              On-site in Sri Lanka.
+              Colombo Engineering Studio.
               <br />
               Overlapping with London, Dubai &amp; Sydney.
             </h2>
             <p>
-              Hardware dispatches reach clients in Colombo 01–15, Moratuwa, and Kandy within contracted SLAs. For international teams, our dev pods operate on UTC+05:30 with full English fluency.
+              Operating directly from Colombo 01, we deliver bespoke web platforms, payment integrations, and architecture reviews for clients across Sri Lanka and international tech teams on UTC+05:30.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Coverage({ onOpenRequest }) {
               className={`coverage-tab-btn ${activeTab === 'local' ? 'active' : ''}`}
               onClick={() => setActiveTab('local')}
             >
-              Sri Lanka Field Hubs (5)
+              Colombo Studio &middot; Sri Lanka
             </button>
             <button
               type="button"
@@ -45,84 +45,101 @@ export default function Coverage({ onOpenRequest }) {
         </div>
 
         {activeTab === 'local' ? (
-          <div className="coverage-local-layout">
-            <div className="coverage-table-card">
-              <div className="table-header-bar">
-                <span>ON-SITE DISPATCH HUB</span>
-                <span>RESPONSE SLA</span>
-                <span>SERVICE READINESS</span>
-                <span>DISPATCH</span>
+          <div className="coverage-local-layout studio-layout">
+            <div className="coverage-studio-card">
+              <div className="studio-card-badge">
+                <span className="city-dot live" />
+                <span>CENTRAL BASE OF OPERATIONS</span>
               </div>
-              <div className="table-rows">
-                {locations.map((loc, idx) => (
-                  <div key={idx} className="coverage-row">
-                    <div className="row-city">
-                      <span className="city-dot live" />
-                      <strong>{loc.name}</strong>
-                    </div>
-                    <div className="row-sla">
-                      <span className="sla-badge">{loc.response}</span>
-                    </div>
-                    <div className="row-coverage">
-                      <span className="coverage-status-tag">{loc.coverage}</span>
-                    </div>
-                    <div className="row-action">
-                      <button
-                        type="button"
-                        className="dispatch-trigger-btn"
-                        onClick={() => onOpenRequest && onOpenRequest(`Dispatch to ${loc.name}`)}
-                      >
-                        Dispatch
-                      </button>
-                    </div>
+              <h3 className="studio-card-title">Colombo Engineering Studio</h3>
+              <p className="studio-card-subtitle">
+                World Trade Center, Colombo 01 &middot; Serving Sri Lanka &amp; Global Clients (+05:30 IST)
+              </p>
+
+              <div className="studio-perks-grid">
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>&lt; 2h Architecture Review</strong>
                   </div>
-                ))}
+                  <p>Guaranteed direct review of your technical quote, database schema, or IPG integration scope.</p>
+                </div>
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>7-Day Turnkey Delivery</strong>
+                  </div>
+                  <p>Production Next.js deployment for e-commerce, villa booking engines, and portals from inquiry to live.</p>
+                </div>
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>Island-Wide Digital Reach</strong>
+                  </div>
+                  <p>Powering brands, exporters, and boutique resorts across Colombo, Kandy, Galle, Mirissa, and Ella.</p>
+                </div>
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>MikroTik &amp; UniFi Architecture</strong>
+                  </div>
+                  <p>Strategic network consulting, VLAN design, and encrypted branch-to-cloud security reviews.</p>
+                </div>
               </div>
 
               <div className="table-footer-bar">
-                <span>Direct Hotline: Mon&ndash;Sat 7:00 AM &ndash; 9:00 PM LK Time</span>
+                <span>Direct Studio Desk: Mon&ndash;Sat 7:00 AM &ndash; 9:00 PM LK Time</span>
                 <a
                   href={`https://wa.me/${WHATSAPP}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="table-wa-link"
                 >
-                  WhatsApp Fast Triage
+                  WhatsApp Fast Architecture Review
                 </a>
               </div>
             </div>
 
-            {/* Architectural Sri Lanka Map Schematic */}
-            <div className="schematic-map-card">
+            {/* Studio Readiness & Turnkey SLA Spec Card */}
+            <div className="schematic-map-card studio-spec-card">
               <div className="schematic-header">
-                <span className="schematic-title">ISLAND DISPATCH TOPOLOGY</span>
-                <span className="schematic-status">ACTIVE HUBS: 5</span>
+                <span className="schematic-title">STUDIO ARCHITECTURE GUARANTEE</span>
+                <span className="schematic-status">STATUS: ONLINE</span>
               </div>
-              <div className="schematic-visual">
-                <div className="schematic-grid-bg" />
-                <div className="hub-node hub-jaffna">
-                  <span className="node-marker" />
-                  <span className="node-label">Jaffna Hub (Northern)</span>
+              <div className="studio-spec-body">
+                <div className="spec-metric-row">
+                  <span className="spec-label">Review Turnaround</span>
+                  <strong className="spec-val">&lt; 2 Hours</strong>
                 </div>
-                <div className="hub-node hub-kandy">
-                  <span className="node-marker primary" />
-                  <span className="node-label">Kandy Central Hub</span>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Turnkey Web Deployment</span>
+                  <strong className="spec-val">7 Calendar Days</strong>
                 </div>
-                <div className="hub-node hub-colombo">
-                  <span className="node-marker flagship" />
-                  <span className="node-label">Colombo Flagship (&lt; 2h SLA)</span>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Local Payment Stack</span>
+                  <strong className="spec-val">PayHere &middot; Koko &middot; Mintpay</strong>
                 </div>
-                <div className="hub-node hub-batti">
-                  <span className="node-marker" />
-                  <span className="node-label">Batticaloa Hub (Eastern)</span>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Primary Studio Location</span>
+                  <strong className="spec-val">Colombo 01 (+05:30 IST)</strong>
                 </div>
-                <div className="hub-node hub-galle">
-                  <span className="node-marker primary" />
-                  <span className="node-label">Galle / Southern Coast Hub</span>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Client Coverage</span>
+                  <strong className="spec-val">Sri Lanka &amp; Worldwide</strong>
                 </div>
-              </div>
-              <div className="schematic-footer">
-                <span>Average engineer arrival time across Western Province: 38 minutes</span>
+
+                <div className="studio-spec-action">
+                  <button
+                    type="button"
+                    className="button button-small"
+                    onClick={() => onOpenRequest && onOpenRequest('Architecture & Technical Review')}
+                  >
+                    Request Technical Review
+                  </button>
+                </div>
               </div>
             </div>
           </div>

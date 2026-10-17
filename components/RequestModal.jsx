@@ -144,7 +144,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
             >
               <option value="">Choose a practice or package...</option>
 
-              <optgroup label="Digital Engineering & Software Solutions">
+              <optgroup label="Web & Software Engineering Services">
                 {digitalServices.map((s) => (
                   <option key={s.id} value={s.title}>
                     {s.title}
@@ -152,7 +152,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
                 ))}
               </optgroup>
 
-              <optgroup label="Software Packages & Tiers">
+              <optgroup label="Turnkey Software Tiers">
                 {serviceTiers.map((t) => (
                   <option key={t.id} value={`Tier: ${t.name}`}>
                     {t.name} &mdash; {t.tagline}
@@ -160,7 +160,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
                 ))}
               </optgroup>
 
-              <optgroup label="On-Site IT Infrastructure & Field Support">
+              <optgroup label="Architecture Consulting & Network Add-On">
                 {infraServices.map((s) => (
                   <option key={s.id} value={s.title}>
                     {s.title}
@@ -168,9 +168,9 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
                 ))}
               </optgroup>
 
-              <optgroup label="Field Support Retainers">
+              <optgroup label="Retainers & Consulting Packages">
                 {infrastructurePackages.map((p) => (
-                  <option key={p.name} value={`Field: ${p.name}`}>
+                  <option key={p.name} value={`Retainer: ${p.name}`}>
                     {p.name}
                   </option>
                 ))}
@@ -226,7 +226,8 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
               id="req-time"
             >
               <option value="">Select urgency...</option>
-              <option value="Immediate Emergency (< 2h)">Immediate Emergency (&lt; 2h in Colombo)</option>
+              <option value="Fast Technical Review (< 2h)">&lt; 2h Fast Technical &amp; Architecture Review</option>
+              <option value="7-Day Turnkey Delivery">7-Day Turnkey Web Delivery Sprint</option>
               <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
               <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
               <option value="Evening (4pm–8pm)">Evening (4pm–8pm)</option>

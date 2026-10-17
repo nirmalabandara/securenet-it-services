@@ -54,21 +54,21 @@ export default function ServicesPage() {
                 className={`filter-btn ${selectedCategory === 'all' ? 'active' : ''}`}
                 onClick={() => setSelectedCategory('all')}
               >
-                All Capabilities (13)
+                All Capabilities (7)
               </button>
               <button
                 type="button"
                 className={`filter-btn ${selectedCategory === 'digital' ? 'active' : ''}`}
                 onClick={() => setSelectedCategory('digital')}
               >
-                Digital &amp; Software Solutions (7)
+                Web &amp; Software Platforms (6)
               </button>
               <button
                 type="button"
-                className={`filter-btn ${selectedCategory === 'infrastructure' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('infrastructure')}
+                className={`filter-btn ${selectedCategory === 'consulting' ? 'active' : ''}`}
+                onClick={() => setSelectedCategory('consulting')}
               >
-                On-Site IT Infrastructure &amp; Field (6)
+                Network Architecture Consulting (1)
               </button>
             </div>
           </div>
@@ -151,15 +151,14 @@ export default function ServicesPage() {
           </section>
         )}
 
-        {/* Section 2: On-Site IT Infrastructure & Support */}
-        {(selectedCategory === 'all' || selectedCategory === 'infrastructure') && (
+        {/* Section 2: Architecture Consulting Add-On */}
+        {(selectedCategory === 'all' || selectedCategory === 'consulting') && (
           <section className="service-category-section shell">
             <div className="category-section-header">
-              <div className="category-eyebrow">PRACTICE AREA 02</div>
-              <h2>On-Site IT Infrastructure &amp; Field Support</h2>
+              <div className="category-eyebrow">CONSULTING ADD-ON</div>
+              <h2>Commercial Network &amp; Cloud Security Architecture</h2>
               <p>
-                Hands-on certified field engineers ready for rapid dispatch across Colombo, Kandy,
-                Galle, and island-wide commercial centers.
+                High-level architecture advisory for enterprise routing, VLAN isolation, VPN tunnels, and cloud firewalls &mdash; delivered as an engineering consulting engagement.
               </p>
             </div>
 
@@ -190,13 +189,26 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
+                  {service.techStack && (
+                    <div className="item-tech-row">
+                      <span className="tech-label">CORE ARCHITECTURE &amp; PROTOCOLS:</span>
+                      <div className="tech-tags">
+                        {service.techStack.map((tech, tIdx) => (
+                          <span key={tIdx} className="tech-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="item-actions">
                     <button
                       type="button"
                       className="button button-small"
                       onClick={() => openRequest(service.title)}
                     >
-                      Dispatch Engineer / Quote
+                      Request Architecture Review
                     </button>
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(

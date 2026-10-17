@@ -7,13 +7,13 @@ export default function Process() {
     },
     {
       num: '02',
-      title: 'Receive a fixed quote',
-      desc: 'Transparent upfront scope and pricing within 2 hours, with zero surprise fees.',
+      title: 'Receive a technical review',
+      desc: '< 2h architecture review, database schema evaluation, and fixed project quote.',
     },
     {
       num: '03',
-      title: 'We dispatch or build',
-      desc: 'An engineer arrives on-site in <2h, or your software development sprint begins.',
+      title: '7-Day Turnkey Delivery',
+      desc: 'Rapid development sprint deployed directly to production with zero friction.',
     },
   ];
 

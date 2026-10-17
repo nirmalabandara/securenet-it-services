@@ -43,48 +43,111 @@ export default function CoveragePage() {
           </div>
         </section>
 
-        {/* Local Sri Lanka Hubs Section */}
+        {/* Colombo Engineering Studio Section */}
         <section className="service-category-section shell">
           <div className="category-section-header">
-            <div className="category-eyebrow">PART 01 &middot; PHYSICAL OPERATIONS</div>
-            <h2>Island-Wide On-Site Field Hubs</h2>
+            <div className="category-eyebrow">PART 01 &middot; STUDIO OPERATIONS</div>
+            <h2>Colombo Engineering Studio</h2>
             <p>
-              When networks crash or hardware fails, remote support is not enough. SecureNet sends
-              certified field engineers directly to your commercial premises.
+              Operating directly from Colombo 01, we deliver bespoke web platforms, payment integrations, and architecture reviews for clients across Sri Lanka and worldwide.
             </p>
           </div>
 
-          <div className="coverage-table-card">
-            <div className="table-header-bar">
-              <span>DISPATCH HUB</span>
-              <span>RESPONSE TIME</span>
-              <span>COVERAGE DETAILS</span>
-              <span>REQUEST</span>
-            </div>
-            <div className="table-rows">
-              {locations.map((loc, idx) => (
-                <div key={idx} className="coverage-row">
-                  <div className="row-city">
-                    <span className="city-dot live" />
-                    <strong>{loc.name}</strong>
+          <div className="coverage-local-layout studio-layout">
+            <div className="coverage-studio-card">
+              <div className="studio-card-badge">
+                <span className="city-dot live" />
+                <span>CENTRAL BASE OF OPERATIONS</span>
+              </div>
+              <h3 className="studio-card-title">Colombo Engineering Studio</h3>
+              <p className="studio-card-subtitle">
+                World Trade Center, Colombo 01 &middot; Serving Sri Lanka &amp; Global Clients (+05:30 IST)
+              </p>
+
+              <div className="studio-perks-grid">
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>&lt; 2h Architecture Review</strong>
                   </div>
-                  <div className="row-sla">
-                    <span className="sla-badge">{loc.response}</span>
-                  </div>
-                  <div className="row-coverage">
-                    <span className="coverage-status-tag">{loc.coverage}</span>
-                  </div>
-                  <div className="row-action">
-                    <button
-                      type="button"
-                      className="dispatch-trigger-btn"
-                      onClick={() => openRequest(`On-demand dispatch to ${loc.name}`)}
-                    >
-                      Request Dispatch
-                    </button>
-                  </div>
+                  <p>Guaranteed direct review of your technical quote, database schema, or IPG integration scope.</p>
                 </div>
-              ))}
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>7-Day Turnkey Delivery</strong>
+                  </div>
+                  <p>Production Next.js deployment for e-commerce, villa booking engines, and portals from inquiry to live.</p>
+                </div>
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>Island-Wide Digital Reach</strong>
+                  </div>
+                  <p>Powering brands, exporters, and boutique resorts across Colombo, Kandy, Galle, Mirissa, and Ella.</p>
+                </div>
+
+                <div className="studio-perk-item">
+                  <div className="perk-top">
+                    <Icon name="check" size={16} className="perk-icon" />
+                    <strong>MikroTik &amp; UniFi Architecture</strong>
+                  </div>
+                  <p>Strategic network consulting, VLAN design, and encrypted branch-to-cloud security reviews.</p>
+                </div>
+              </div>
+
+              <div className="table-footer-bar">
+                <span>Direct Studio Desk: Mon&ndash;Sat 7:00 AM &ndash; 9:00 PM LK Time</span>
+                <a
+                  href={`https://wa.me/${WHATSAPP}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="table-wa-link"
+                >
+                  WhatsApp Fast Architecture Review
+                </a>
+              </div>
+            </div>
+
+            <div className="schematic-map-card studio-spec-card">
+              <div className="schematic-header">
+                <span className="schematic-title">STUDIO ARCHITECTURE GUARANTEE</span>
+                <span className="schematic-status">STATUS: ONLINE</span>
+              </div>
+              <div className="studio-spec-body">
+                <div className="spec-metric-row">
+                  <span className="spec-label">Review Turnaround</span>
+                  <strong className="spec-val">&lt; 2 Hours</strong>
+                </div>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Turnkey Web Deployment</span>
+                  <strong className="spec-val">7 Calendar Days</strong>
+                </div>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Local Payment Stack</span>
+                  <strong className="spec-val">PayHere &middot; Koko &middot; Mintpay</strong>
+                </div>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Primary Studio Location</span>
+                  <strong className="spec-val">Colombo 01 (+05:30 IST)</strong>
+                </div>
+                <div className="spec-metric-row">
+                  <span className="spec-label">Client Coverage</span>
+                  <strong className="spec-val">Sri Lanka &amp; Worldwide</strong>
+                </div>
+
+                <div className="studio-spec-action">
+                  <button
+                    type="button"
+                    className="button button-small"
+                    onClick={() => openRequest('Architecture & Technical Review')}
+                  >
+                    Request Technical Review
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

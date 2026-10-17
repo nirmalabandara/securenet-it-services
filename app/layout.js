@@ -1,26 +1,26 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'SecureNet Technologies | On-Site IT, Digital Engineering & Software Solutions Sri Lanka',
+  title: 'SecureNet Technologies | Web & Software Engineering Studio Colombo',
   description:
-    'Rapid on-site IT support across Sri Lanka (< 2h in Colombo) and bespoke digital engineering: PayHere/Koko e-commerce, WhatsApp automation, boutique hotel booking engines, ERP portals, and offshore engineering pods.',
+    'Colombo Engineering Studio delivering bespoke web platforms, e-commerce with PayHere & Koko BNPL, WhatsApp automation, direct villa booking engines, and < 2h architecture reviews.',
   keywords: [
-    'IT support Sri Lanka',
-    'on-site IT services Colombo',
+    'Web development Sri Lanka',
+    'Next.js developers Colombo',
     'PayHere integration Sri Lanka',
     'Koko BNPL e-commerce',
     'WhatsApp automation Notify.lk',
     'villa booking engine Sri Lanka',
-    'custom ERP software Sri Lanka',
-    'Next.js developers Sri Lanka',
+    'Web POS software Sri Lanka',
     'offshore engineering pods',
-    'office network setup UniFi',
+    'MikroTik network architecture',
+    'UniFi VLAN security consulting',
   ],
   authors: [{ name: 'SecureNet Technologies' }],
   openGraph: {
-    title: 'SecureNet Technologies | On-Site IT & Digital Product Engineering',
+    title: 'SecureNet Technologies | Colombo Engineering Studio & Software Platforms',
     description:
-      'From urgent physical IT dispatch across Sri Lanka to high-converting e-commerce, trilingual WhatsApp bots, and direct villa booking platforms.',
+      'Turnkey web engineering: < 2h architecture review, 7-day web platform delivery, PayHere/Koko checkouts, and offshore engineering pods.',
     type: 'website',
     locale: 'en_LK',
   },

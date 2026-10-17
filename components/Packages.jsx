@@ -26,14 +26,14 @@ export default function Packages({ onOpenRequest }) {
               className={`toggle-btn ${tierType === 'digital' ? 'active' : ''}`}
               onClick={() => setTierType('digital')}
             >
-              Software Tiers (4)
+              Turnkey Software Tiers (4)
             </button>
             <button
               type="button"
               className={`toggle-btn ${tierType === 'infrastructure' ? 'active' : ''}`}
               onClick={() => setTierType('infrastructure')}
             >
-              On-Site IT Retainers (3)
+              Retainers &amp; Architecture (3)
             </button>
           </div>
         </div>

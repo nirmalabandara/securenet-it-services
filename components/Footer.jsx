@@ -15,43 +15,41 @@ export default function Footer() {
 
           <div className="footer-status-pill">
             <span className="status-dot live" />
-            <span>&lt; 2h Colombo Field Response SLA</span>
+            <span>&lt; 2h Technical Review &middot; 7-Day Web Delivery</span>
           </div>
 
           <div className="footer-tz-badge">
-            <span className="tz-key">LOCAL HUB TIME:</span>
+            <span className="tz-key">STUDIO TIME:</span>
             <span className="tz-val">COLOMBO (+05:30 IST)</span>
           </div>
         </div>
 
         <div className="footer-col">
-          <h4>Digital Engineering</h4>
+          <h4>Web &amp; Software Platforms</h4>
           <ul className="footer-nav-list">
-            <li><Link href="/services#ecommerce-payments">E-Commerce &amp; Local IPG</Link></li>
-            <li><Link href="/services#whatsapp-automation">WhatsApp &amp; SMS Bots</Link></li>
-            <li><Link href="/services#hospitality-booking">Villa &amp; Hotel Direct Booking</Link></li>
-            <li><Link href="/services#custom-erp-portals">Custom ERP &amp; POS Systems</Link></li>
-            <li><Link href="/services#b2b-exporters">Exporter Corporate Web</Link></li>
+            <li><Link href="/services#ecommerce-payments">E-Commerce &amp; PayHere/Koko</Link></li>
+            <li><Link href="/services#whatsapp-automation">WhatsApp &amp; SMS Automation</Link></li>
+            <li><Link href="/services#hospitality-booking">Villa Direct Booking Engines</Link></li>
+            <li><Link href="/services#custom-erp-portals">Web POS &amp; Business Portals</Link></li>
+            <li><Link href="/services#b2b-exporters">Exporter Corporate Sites</Link></li>
             <li><Link href="/services#offshore-development">Offshore Engineering Pods</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>On-Site Infrastructure</h4>
+          <h4>Consulting &amp; Reach</h4>
           <ul className="footer-nav-list">
-            <li><Link href="/services#emergency-it">Emergency IT Incident Dispatch</Link></li>
-            <li><Link href="/services#network-wifi">Enterprise Network &amp; Wi-Fi</Link></li>
-            <li><Link href="/services#managed-it">Managed Workplace Care</Link></li>
-            <li><Link href="/services#cybersecurity">Cybersecurity &amp; Ransomware Defense</Link></li>
-            <li><Link href="/services#office-setup">Turnkey Commercial Office Setup</Link></li>
-            <li><Link href="/coverage">Island-Wide Coverage Hubs</Link></li>
+            <li><Link href="/services#network-security-consulting">Commercial Network &amp; Cloud Security</Link></li>
+            <li><Link href="/pricing">Turnkey Software Packages</Link></li>
+            <li><Link href="/coverage">Colombo Studio &amp; Global Overlap</Link></li>
+            <li><Link href="/contact">Schedule Technical Review</Link></li>
           </ul>
         </div>
 
         <div className="footer-col contact-col">
           <h4>Direct Operations</h4>
           <div className="footer-contact-item">
-            <span className="contact-label">EMERGENCY DISPATCH &amp; WA:</span>
+            <span className="contact-label">DIRECT STUDIO DESK &amp; WA:</span>
             <a
               href={`https://wa.me/${WHATSAPP}`}
               target="_blank"

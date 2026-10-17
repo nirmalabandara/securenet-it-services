@@ -31,7 +31,7 @@ export default function Hero({ onOpenRequest }) {
           </h1>
 
           <p className="hero-modern-desc">
-            A leading IT service company dedicated to empowering Sri Lankan businesses and global teams with cutting-edge software solutions, local payment flows, and rapid on-site dispatch.
+            A boutique engineering studio empowering Sri Lankan enterprises and global teams with bespoke software platforms, local payment integrations, and rapid 7-day turnkey delivery.
           </p>
 
           <div className="hero-modern-cta-row">
@@ -95,8 +95,8 @@ export default function Hero({ onOpenRequest }) {
                 <Icon name="check" size={16} />
               </div>
               <div>
-                <b>&lt; 2h SLA</b>
-                <small>Physical Arrival Guaranteed</small>
+                <b>&lt; 2h Technical Review</b>
+                <small>Architecture &amp; Quote Guaranteed</small>
               </div>
             </div>
           </div>

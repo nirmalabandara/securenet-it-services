@@ -2233,119 +2233,129 @@ a {
   gap: 24px;
 }
 
-.coverage-table-card,
-.schematic-map-card,
-.global-hero-card {
+.coverage-studio-card {
   background: var(--s1);
   border: 1px solid var(--b1);
   border-radius: var(--r8);
   overflow: hidden;
   box-shadow: var(--sh-sm);
-}
-
-.table-header-bar {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1.3fr 100px;
-  padding: 12px 18px;
-  background: var(--s2);
-  border-bottom: 1px solid var(--b1);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--t3);
-  letter-spacing: 0.08em;
-}
-
-.coverage-row {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1.3fr 100px;
-  align-items: center;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--b0);
-  font-size: 12px;
-}
-
-.coverage-row:last-child {
-  border-bottom: none;
-}
-
-.row-city {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--t1);
-}
-
-.city-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-}
-
-.sla-badge {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--green);
-  background: var(--green-bg);
-  padding: 2px 7px;
-  border-radius: 3px;
-}
-
-.coverage-status-tag {
-  color: var(--t2);
-  font-size: 11px;
-}
-
-.dispatch-trigger-btn {
-  background: transparent;
-  border: 1px solid var(--b1);
-  color: var(--t1);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 120ms ease;
-}
-
-.dispatch-trigger-btn:hover {
-  border-color: var(--a);
-  color: var(--a);
-}
-
-.table-footer-bar {
-  padding: 12px 18px;
-  background: var(--s2);
-  border-top: 1px solid var(--b0);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: var(--t3);
-  font-family: var(--font-mono);
-}
-
-.table-wa-link {
-  color: #25d366;
-  font-weight: 600;
-}
-
-/* Schematic Map Visual (NO GRID) */
-.schematic-map-card {
   display: flex;
   flex-direction: column;
 }
 
-.schematic-header {
-  padding: 12px 16px;
+.studio-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
   background: var(--s2);
   border-bottom: 1px solid var(--b1);
-  display: flex;
-  justify-content: space-between;
   font-family: var(--font-mono);
   font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--t2);
+}
+
+.studio-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--t1);
+  padding: 24px 24px 6px;
+}
+
+.studio-card-subtitle {
+  font-size: 13px;
+  color: var(--a);
+  font-weight: 600;
+  padding: 0 24px 20px;
+  border-bottom: 1px solid var(--b0);
+}
+
+.studio-perks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 24px;
+  flex: 1;
+}
+
+.studio-perk-item {
+  background: var(--s2);
+  border: 1px solid var(--b1);
+  border-radius: var(--r4);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perk-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--t1);
+  font-size: 13px;
+}
+
+.perk-icon {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.studio-perk-item p {
+  font-size: 11px;
   color: var(--t3);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.studio-spec-card {
+  background: var(--s1);
+  border: 1px solid var(--b1);
+  border-radius: var(--r8);
+  overflow: hidden;
+}
+
+.studio-spec-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.spec-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--b0);
+  font-size: 12px;
+}
+
+.spec-metric-row:last-of-type {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--t3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.spec-val {
+  color: var(--t1);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.studio-spec-action {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.studio-spec-action .button {
+  width: 100%;
 }
 
 .schematic-visual {

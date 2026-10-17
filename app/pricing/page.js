@@ -48,14 +48,14 @@ export default function PricingPage() {
                 className={`filter-btn ${pricingMode === 'digital' ? 'active' : ''}`}
                 onClick={() => setPricingMode('digital')}
               >
-                Recommended Software Tiers (4)
+                Turnkey Software Tiers (4)
               </button>
               <button
                 type="button"
                 className={`filter-btn ${pricingMode === 'infrastructure' ? 'active' : ''}`}
                 onClick={() => setPricingMode('infrastructure')}
               >
-                On-Site IT Retainers (3)
+                Retainers &amp; Architecture (3)
               </button>
               <button
                 type="button"
@@ -131,14 +131,14 @@ export default function PricingPage() {
           </section>
         )}
 
-        {/* Mode 2: On-Site IT Retainers */}
+        {/* Mode 2: Retainers & Architecture */}
         {pricingMode === 'infrastructure' && (
           <section className="pricing-section shell">
             <div className="category-section-header">
-              <div className="category-eyebrow">ON-SITE WORKPLACE CARE</div>
-              <h2>On-Site IT Infrastructure Packages</h2>
+              <div className="category-eyebrow">CONSULTING &amp; RETAINERS</div>
+              <h2>Software Retainers &amp; Architecture Scoping</h2>
               <p>
-                Hands-on emergency triage and preventative workstation maintenance across Sri Lankan offices.
+                Guaranteed engineering delivery, high-level routing/VLAN architecture reviews, and monthly platform retainers.
               </p>
             </div>
 

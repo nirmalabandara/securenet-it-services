@@ -52,11 +52,11 @@ export default function AboutShowcase({ onOpenRequest }) {
             </div>
 
             <h2 className="about-headline">
-              Exclusive Technology &amp; Hands-On IT Solutions
+              Exclusive Web Engineering &amp; Strategic Solutions
             </h2>
 
             <p className="about-desc">
-              Advising Sri Lankan enterprises and global partners on digital engineering, local payment gateways, and rapid physical workplace infrastructure dispatch.
+              Advising Sri Lankan enterprises and global partners on bespoke digital engineering, local payment gateways, and high-performance web platforms.
             </p>
 
             <div className="about-points-list">
@@ -65,8 +65,8 @@ export default function AboutShowcase({ onOpenRequest }) {
                   <Icon name="terminal" size={18} />
                 </div>
                 <div>
-                  <h4>Analytical diagnosis &amp; root cause triage</h4>
-                  <p>We deploy certified network engineers with hardware analyzers to systematically resolve outages, cabling cuts, and server downtime.</p>
+                  <h4>Architecture reviews &amp; turnkey 7-day sprints</h4>
+                  <p>Guaranteed &lt; 2h technical reviews and rapid deployment sprints for modern Next.js web applications with zero overhead.</p>
                 </div>
               </div>
 
