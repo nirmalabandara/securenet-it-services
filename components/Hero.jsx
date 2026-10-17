@@ -5,14 +5,14 @@ import Link from 'next/link';
 import Icon from './Icons';
 
 export default function Hero({ onOpenRequest }) {
-  const [consoleMode, setConsoleMode] = useState('dispatch'); // 'dispatch' | 'code'
+  const [activePreview, setActivePreview] = useState('checkout'); // 'checkout' | 'whatsapp' | 'booking' | 'dispatch'
 
   return (
     <section className="hero">
       <div className="hero-grid shell">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="live-dot" /> On-Site IT & Digital Engineering · Sri Lanka
+            <span className="live-dot" /> On-Site IT &amp; Digital Engineering &middot; Sri Lanka
           </div>
 
           <h1>
@@ -22,9 +22,9 @@ export default function Hero({ onOpenRequest }) {
           </h1>
 
           <p>
-            From emergency field dispatch across Sri Lanka to high-converting
-            e-commerce, WhatsApp automation, boutique hotel booking engines,
-            and dedicated offshore engineering pods.
+            From rapid on-site IT dispatch across Colombo and regional hubs, to high-converting
+            e-commerce stores with PayHere &amp; Koko BNPL, automated WhatsApp notifications, and
+            direct villa booking platforms.
           </p>
 
           <div className="hero-actions">
@@ -34,158 +34,227 @@ export default function Hero({ onOpenRequest }) {
               onClick={() => onOpenRequest()}
               id="hero-request-btn"
             >
-              Request Support / Quote <span>→</span>
+              Request Quote / Dispatch <span>&rarr;</span>
             </button>
             <Link href="/services" className="button button-ghost">
-              Explore 13 Services <span>↓</span>
+              Explore 13 Practice Areas <span>&darr;</span>
             </Link>
           </div>
 
           <div className="hero-metrics-chips">
             <div className="metric-chip">
-              <span className="chip-key">&lt; 2h</span>
+              <span className="chip-key">&lt; 2h Arrival</span>
               <span className="chip-val">Field Dispatch in Colombo</span>
             </div>
             <div className="metric-chip">
-              <span className="chip-key">PayHere · Koko</span>
+              <span className="chip-key">PayHere &middot; Koko</span>
               <span className="chip-val">Native Local Checkouts</span>
             </div>
             <div className="metric-chip">
-              <span className="chip-key">+05:30 IST</span>
-              <span className="chip-val">AU · UK · UAE Timezone Overlap</span>
+              <span className="chip-key">0% OTA Commission</span>
+              <span className="chip-val">Direct Villa Booking Platforms</span>
             </div>
           </div>
         </div>
 
-        {/* Console / Terminal Mockup */}
-        <div className="hero-console" aria-label="SecureNet Operations Terminal">
-          <div className="console-header">
-            <div className="console-modes">
-              <button
-                type="button"
-                className={`console-mode-btn ${consoleMode === 'dispatch' ? 'active' : ''}`}
-                onClick={() => setConsoleMode('dispatch')}
-              >
-                <span className="status-dot live" />
-                <span>FIELD DISPATCH CONSOLE</span>
-              </button>
-              <button
-                type="button"
-                className={`console-mode-btn ${consoleMode === 'code' ? 'active' : ''}`}
-                onClick={() => setConsoleMode('code')}
-              >
-                <span className="status-dot code" />
-                <span>SOFTWARE & API CLOUD</span>
-              </button>
-            </div>
-            <span className="console-badge">SL-SYS v4.8</span>
-          </div>
-
-          {consoleMode === 'dispatch' ? (
-            <div className="console-body">
-              <div className="console-meta-bar">
-                <span>REGION: SRI LANKA (ALL HUBS)</span>
-                <span className="mono-green">SLA: 99.8% ON-TIME</span>
-              </div>
-
-              <div className="ticket-item urgent">
-                <div className="ticket-top">
-                  <span className="ticket-id">#SN-2419</span>
-                  <span className="ticket-badge red">EMERGENCY DISPATCH</span>
-                  <span className="ticket-time">14m ago</span>
-                </div>
-                <div className="ticket-title">Lanka Trade Solutions · Colombo 03</div>
-                <div className="ticket-desc">
-                  Core switch rack offline &middot; 42 workstations interrupted
-                </div>
-                <div className="ticket-status-row">
-                  <span className="status-indicator dispatched">
-                    &bull; Engineer Dispatched (ETA: 28 mins)
-                  </span>
-                  <span className="ticket-engineer">Lead: D. Jayasinghe</span>
-                </div>
-              </div>
-
-              <div className="ticket-item normal">
-                <div className="ticket-top">
-                  <span className="ticket-id">#SN-2418</span>
-                  <span className="ticket-badge blue">MAINTENANCE & WI-FI</span>
-                  <span className="ticket-time">1h 12m ago</span>
-                </div>
-                <div className="ticket-title">Vertex Holdings · Kandy City</div>
-                <div className="ticket-desc">
-                  UniFi U6 Pro AP upgrade &amp; VLAN separation for POS
-                </div>
-                <div className="ticket-status-row">
-                  <span className="status-indicator complete">
-                    &#10003; Completed &middot; Verified 380 Mbps throughput
-                  </span>
-                  <span className="ticket-engineer">Hub: Central</span>
-                </div>
-              </div>
-
-              <div className="ticket-item compact">
-                <div className="ticket-top">
-                  <span className="ticket-id">#SN-2417</span>
-                  <span className="ticket-badge green">VILLA BOOKING LAUNCH</span>
-                  <span className="ticket-time">Today</span>
-                </div>
-                <div className="ticket-title">Mirissa Blue Resort · Southern Province</div>
-                <div className="ticket-desc">
-                  Direct booking engine live &middot; Stripe &amp; PayHere connected
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="console-body code-body">
-              <div className="console-meta-bar">
-                <span>DEPLOYMENT: NEXT.JS 16 &middot; EDGE NETWORK</span>
-                <span className="mono-green">STATUS: HEALTHY</span>
-              </div>
-
-              <div className="code-log">
-                <div className="code-line">
-                  <span className="c-time">12:04:18</span>
-                  <span className="c-tag info">[PAYMENTS]</span>
-                  <span className="c-text">PayHere IPG &amp; Koko BNPL webhook handshake 200 OK</span>
-                </div>
-                <div className="code-line">
-                  <span className="c-time">12:04:19</span>
-                  <span className="c-tag success">[WHATSAPP]</span>
-                  <span className="c-text">Notify.lk trilingual SMS dispatch triggered (order #LK-8891)</span>
-                </div>
-                <div className="code-line">
-                  <span className="c-time">12:04:22</span>
-                  <span className="c-tag info">[BOOKING]</span>
-                  <span className="c-text">iCal 2-way sync: Mirissa Villa #04 booked (USD 340.00 via Stripe)</span>
-                </div>
-                <div className="code-line">
-                  <span className="c-time">12:04:27</span>
-                  <span className="c-tag warn">[ERP SYNC]</span>
-                  <span className="c-text">Peliyagoda warehouse stock level reconciled (1,420 SKUs)</span>
-                </div>
-                <div className="code-line">
-                  <span className="c-time">12:04:30</span>
-                  <span className="c-tag success">[OFFSHORE]</span>
-                  <span className="c-text">Sydney client sprint sync: 4 PRs merged &middot; +05:30 overlap active</span>
-                </div>
-              </div>
-
-              <div className="terminal-footer">
-                <span className="term-prompt">&gt; securenet-cli ready</span>
-                <span className="term-cursor" />
-              </div>
-            </div>
-          )}
-
-          <div className="console-bottom-bar">
-            <span>24/7 Field &amp; Cloud Standby</span>
+        {/* Real-World Interactive Solution Card */}
+        <div className="hero-showcase-card" aria-label="Interactive Solution Showcase">
+          <div className="showcase-tabs-nav">
             <button
               type="button"
-              className="console-action-link"
+              className={`showcase-nav-btn ${activePreview === 'checkout' ? 'active' : ''}`}
+              onClick={() => setActivePreview('checkout')}
+            >
+              E-Commerce &amp; IPG
+            </button>
+            <button
+              type="button"
+              className={`showcase-nav-btn ${activePreview === 'whatsapp' ? 'active' : ''}`}
+              onClick={() => setActivePreview('whatsapp')}
+            >
+              WhatsApp Bot
+            </button>
+            <button
+              type="button"
+              className={`showcase-nav-btn ${activePreview === 'booking' ? 'active' : ''}`}
+              onClick={() => setActivePreview('booking')}
+            >
+              Villa Booking
+            </button>
+            <button
+              type="button"
+              className={`showcase-nav-btn ${activePreview === 'dispatch' ? 'active' : ''}`}
+              onClick={() => setActivePreview('dispatch')}
+            >
+              Field Dispatch
+            </button>
+          </div>
+
+          <div className="showcase-card-body">
+            {activePreview === 'checkout' && (
+              <div className="preview-panel checkout-preview">
+                <div className="preview-top-row">
+                  <div>
+                    <span className="preview-tag">PAYMENT ARCHITECTURE</span>
+                    <h4>Sri Lanka Native Mobile Checkout</h4>
+                  </div>
+                  <span className="speed-tag">Dialog/Mobitel 4G &lt;0.8s</span>
+                </div>
+
+                <div className="mock-checkout-box">
+                  <div className="mock-total-row">
+                    <span>Order Total:</span>
+                    <strong>LKR 12,600.00</strong>
+                  </div>
+
+                  <div className="payment-options-list">
+                    <div className="pay-option active">
+                      <div className="pay-radio selected" />
+                      <div className="pay-details">
+                        <b>PayHere IPG / Bank Cards</b>
+                        <small>Visa, Mastercard, Commercial Bank, Sampath, FriMi, Genie</small>
+                      </div>
+                    </div>
+
+                    <div className="pay-option">
+                      <div className="pay-radio" />
+                      <div className="pay-details">
+                        <b>Koko &mdash; Buy Now, Pay Later</b>
+                        <small className="koko-highlight">3 interest-free monthly payments of LKR 4,200</small>
+                      </div>
+                      <span className="bnpl-badge">Popular</span>
+                    </div>
+
+                    <div className="pay-option">
+                      <div className="pay-radio" />
+                      <div className="pay-details">
+                        <b>Mintpay &mdash; 0% Interest Installments</b>
+                        <small>Pay in 3 split debit card deductions</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="checkout-note-bar">
+                    <Icon name="shield" size={14} className="sec-icon" />
+                    <span>SSL 256-bit Bank Grade Encrypted &middot; Zero Cart Abandonment</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activePreview === 'whatsapp' && (
+              <div className="preview-panel whatsapp-preview">
+                <div className="preview-top-row">
+                  <div>
+                    <span className="preview-tag">SALES &amp; SUPPORT AUTOMATION</span>
+                    <h4>WhatsApp Business &amp; SMS Gateway</h4>
+                  </div>
+                  <span className="speed-tag">Notify.lk / Dialog API</span>
+                </div>
+
+                <div className="mock-chat-window">
+                  <div className="chat-bubble incoming">
+                    <span className="chat-sender">SecureNet Automation &bull; 10:14 AM</span>
+                    <p>
+                      Hello Kasun! Your order <strong>#LK-2819</strong> has been verified.
+                      Our Colombo logistics hub will dispatch via Domex today.
+                    </p>
+                    <div className="chat-lang-pill">Trilingual: English &middot; සිංහල &middot; தமிழ்</div>
+                  </div>
+
+                  <div className="chat-bubble outgoing">
+                    <p>Can I pay via Koko on delivery or PayHere online?</p>
+                    <span className="chat-time">10:15 AM &bull; Read &#10003;&#10003;</span>
+                  </div>
+
+                  <div className="chat-bubble incoming">
+                    <p>
+                      Yes! You can split into 3 interest-free payments via Koko right now:
+                      <br />
+                      <span className="link-preview">securenet.lk/pay/LK-2819</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activePreview === 'booking' && (
+              <div className="preview-panel booking-preview">
+                <div className="preview-top-row">
+                  <div>
+                    <span className="preview-tag">HOSPITALITY REVENUE</span>
+                    <h4>Direct Booking Engine &middot; Mirissa, Southern Coast</h4>
+                  </div>
+                  <span className="ota-saving-tag">Saves 18% OTA Commission</span>
+                </div>
+
+                <div className="mock-booking-card">
+                  <div className="villa-card-header">
+                    <div>
+                      <h5>Mirissa Ocean Surf Villa</h5>
+                      <span className="villa-sub">Beachfront &middot; Private Plunge Pool &middot; 4 Guests</span>
+                    </div>
+                    <div className="villa-rate">
+                      <strong>USD $280</strong>
+                      <small>/ night</small>
+                    </div>
+                  </div>
+
+                  <div className="booking-form-strip">
+                    <div className="bf-item">
+                      <span>DATES:</span>
+                      <b>Oct 24 &ndash; Oct 28 (4 nights)</b>
+                    </div>
+                    <div className="bf-item">
+                      <span>COMMISSION SAVED:</span>
+                      <b className="green-val">+$224 vs Airbnb</b>
+                    </div>
+                  </div>
+
+                  <div className="sync-status-row">
+                    <Icon name="check" size={13} className="check-sync" />
+                    <span>2-Way iCal Real-Time Sync with Booking.com &amp; Agoda (Zero Double Bookings)</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activePreview === 'dispatch' && (
+              <div className="preview-panel dispatch-preview">
+                <div className="preview-top-row">
+                  <div>
+                    <span className="preview-tag">ON-SITE INCIDENT TRIAGE</span>
+                    <h4>Field Dispatch &middot; Commercial Office Support</h4>
+                  </div>
+                  <span className="speed-tag">&lt; 2h Colombo SLA</span>
+                </div>
+
+                <div className="mock-dispatch-card">
+                  <div className="dispatch-row">
+                    <span className="d-label">CLIENT PREMISE:</span>
+                    <strong>Lanka Trade Solutions (Colombo 03)</strong>
+                  </div>
+                  <div className="dispatch-row">
+                    <span className="d-label">REPORTED ISSUE:</span>
+                    <span>Core switch rack collapse; 42 accounting PCs offline</span>
+                  </div>
+                  <div className="dispatch-row">
+                    <span className="d-label">DISPATCH STATUS:</span>
+                    <span className="sla-live-tag">&#10003; Engineer on-site in 28 mins &middot; Hardware restored</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="showcase-card-footer">
+            <span>Engineering tailored for Sri Lankan &amp; global businesses</span>
+            <button
+              type="button"
+              className="showcase-cta-btn"
               onClick={() => onOpenRequest()}
             >
-              Open Ticket / RFP &rarr;
+              Get Custom Proposal &rarr;
             </button>
           </div>
         </div>

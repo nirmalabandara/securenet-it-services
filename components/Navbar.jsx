@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 import { WHATSAPP, WHATSAPP_DISPLAY } from '@/lib/constants';
 
 export default function Navbar({ onOpenRequest, onOpenAdmin }) {
@@ -31,9 +32,9 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
       <div className="nav shell">
         <div className="nav-left">
           <Logo />
-          <div className="nav-status-chip" title="Active SLA response across Sri Lanka">
+          <div className="nav-status-chip" title="Active on-site SLA & digital engineering across Sri Lanka">
             <span className="status-dot live" />
-            <span>DISPATCH & DEV LIVE</span>
+            <span>SRI LANKA &middot; ON-CALL</span>
           </div>
         </div>
 
@@ -53,6 +54,8 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
         </nav>
 
         <div className="nav-right">
+          <ThemeToggle />
+
           <a
             href={`https://wa.me/${WHATSAPP}`}
             target="_blank"
@@ -70,7 +73,7 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
             onClick={() => onOpenRequest ? onOpenRequest() : (window.location.href = '/contact')}
             id="nav-request-btn"
           >
-            Request Dispatch / Quote <span>→</span>
+            Request Quote / Dispatch <span>&rarr;</span>
           </button>
 
           <button
@@ -90,7 +93,10 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
           <div className="mobile-drawer-inner shell">
             <div className="mobile-status-row">
               <span className="status-dot live" />
-              <span>Sri Lanka Field Support & Digital Engineering</span>
+              <span>Sri Lanka Field Support &amp; Digital Engineering</span>
+              <div style={{ marginLeft: 'auto' }}>
+                <ThemeToggle />
+              </div>
             </div>
             {navLinks.map((link) => (
               <Link
@@ -120,7 +126,7 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
                   onOpenRequest ? onOpenRequest() : (window.location.href = '/contact');
                 }}
               >
-                Request Dispatch / Quote <span>→</span>
+                Request Quote / Dispatch <span>&rarr;</span>
               </button>
               {onOpenAdmin && (
                 <button
