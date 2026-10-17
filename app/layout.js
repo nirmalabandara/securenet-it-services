@@ -25,12 +25,14 @@ export const metadata = {
     locale: 'en_LK',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/securenet-icon.svg',
+    shortcut: '/securenet-icon.svg',
+    apple: '/securenet-app-icon.svg',
   },
 };
 
 export const viewport = {
-  themeColor: '#0b0d10',
+  themeColor: '#0c0e12',
   width: 'device-width',
   initialScale: 1,
 };
@@ -38,6 +40,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('securenet-theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
