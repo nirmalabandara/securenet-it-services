@@ -22,7 +22,7 @@ export default function Hero({ onOpenRequest }) {
         {/* Left Column: Heading, Social Proof Pill, Stats */}
         <div className="hero-modern-left">
           <div className="pill-badge-top">
-            <span className="pill-dot" />
+
             <span>Best IT &amp; Engineering Solutions</span>
           </div>
 
