@@ -154,7 +154,6 @@ export default function Services({ onOpenRequest }) {
                 <div className="service-bullet-points">
                   {service.features.slice(0, 2).map((feat, fIdx) => (
                     <div key={fIdx} className="bullet-row">
-                      <span className="bullet-dash">&mdash;</span>
                       <span>{feat}</span>
                     </div>
                   ))}

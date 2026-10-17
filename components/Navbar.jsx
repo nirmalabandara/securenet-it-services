@@ -33,8 +33,8 @@ export default function Navbar({ onOpenRequest }) {
         <div className="nav-left">
           <Logo />
           <div className="nav-status-chip" title="Active on-site SLA & digital engineering across Sri Lanka">
-            <span className="status-dot live" />
-            <span>SRI LANKA &middot; ON-CALL</span>
+
+            <span>ON CALL</span>
           </div>
         </div>
 
