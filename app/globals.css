@@ -446,13 +446,9 @@ a {
   color: #ffffff;
 }
 
-.wa-icon {
-  font-size: 10px;
-  font-weight: 800;
-  background: rgba(0, 0, 0, 0.2);
+.wa-svg-icon {
+  flex-shrink: 0;
   color: #ffffff;
-  padding: 3px 6px;
-  border-radius: var(--r-full);
 }
 
 .mobile-menu-btn {

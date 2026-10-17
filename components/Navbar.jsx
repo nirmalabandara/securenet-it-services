@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+import Icon from './Icons';
 import { WHATSAPP, WHATSAPP_DISPLAY } from '@/lib/constants';
 
 export default function Navbar({ onOpenRequest }) {
@@ -63,7 +64,7 @@ export default function Navbar({ onOpenRequest }) {
             className="nav-whatsapp-link"
             aria-label="Direct WhatsApp contact"
           >
-            <span className="wa-icon">WA</span>
+            <Icon name="whatsapp" size={17} className="wa-svg-icon" />
             <span className="wa-number">{WHATSAPP_DISPLAY}</span>
           </a>
 
