@@ -19,16 +19,15 @@ export default function Services({ onOpenRequest }) {
         <div className="section-header-split">
           <div className="section-header-copy">
             <div className="eyebrow">
-              <span className="live-dot" /> Practical Capabilities
+              <span className="num">02 /</span> FIELD CAPABILITIES &amp; CODEBASE AUDITS
             </div>
             <h2>
-              Software engineering &amp;
+              Hands-on network cabling &amp;
               <br />
-              hands-on IT support.
+              bespoke software systems.
             </h2>
             <p>
-              Direct field engineers stationed across Sri Lanka, and software engineers
-              building high-converting web apps, payment flows, and business portals.
+              Hardware field engineers equipped with Fluke network analyzers stationed across Colombo and Kandy, alongside senior full-stack developers building custom ERP portals and billing gateways.
             </p>
           </div>
 

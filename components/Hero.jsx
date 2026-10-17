@@ -12,19 +12,17 @@ export default function Hero({ onOpenRequest }) {
       <div className="hero-grid shell">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="live-dot" /> On-Site IT &amp; Digital Engineering &middot; Sri Lanka
+            <span className="num">01 /</span> ON-SITE IT DISPATCH &amp; COMMERCE ENGINEERING &middot; SRI LANKA
           </div>
 
           <h1>
-            Technology systems that
+            Engineers who
             <br />
-            <em>shows up</em> for your business.
+            <em>physically show up</em> to fix your network.
           </h1>
 
           <p>
-            From rapid on-site IT dispatch across Colombo and regional hubs, to high-converting
-            e-commerce stores with PayHere &amp; Koko BNPL, automated WhatsApp notifications, and
-            direct villa booking platforms.
+            When a fiber link goes down or a POS freezes during peak lunch trade, you don’t need an AI chatbot—you need an engineer with an OTDR tester in a cab. We support commercial offices across Colombo and build custom Next.js stores integrated with PayHere, Koko BNPL, and trilingual WhatsApp notifications.
           </p>
 
           <div className="hero-actions">
@@ -34,25 +32,25 @@ export default function Hero({ onOpenRequest }) {
               onClick={() => onOpenRequest()}
               id="hero-request-btn"
             >
-              Request Quote
+              Request Field Engineer
             </button>
             <Link href="/services" className="button button-ghost">
-              Explore
+              Explore Practice Areas
             </Link>
           </div>
 
           <div className="hero-metrics-chips">
             <div className="metric-chip">
-              <span className="chip-key">&lt; 2h Arrival</span>
-              <span className="chip-val">Field Dispatch in Colombo</span>
+              <span className="chip-key">1h 42m</span>
+              <span className="chip-val">Avg Colombo Fort &amp; Kollupitiya Arrival</span>
             </div>
             <div className="metric-chip">
-              <span className="chip-key">PayHere &middot; Koko</span>
-              <span className="chip-val">Native Local Checkouts</span>
+              <span className="chip-key">LKR 14,850</span>
+              <span className="chip-val">PayHere &amp; Koko Checkout AOV</span>
             </div>
             <div className="metric-chip">
-              <span className="chip-key">0% OTA Commission</span>
-              <span className="chip-val">Direct Villa Booking Platforms</span>
+              <span className="chip-key">0%</span>
+              <span className="chip-val">OTA Commission on Direct Villa Engines</span>
             </div>
           </div>
         </div>

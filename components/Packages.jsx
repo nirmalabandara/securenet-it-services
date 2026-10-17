@@ -13,11 +13,11 @@ export default function Packages({ onOpenRequest }) {
       <div className="shell">
         <div className="center-heading">
           <div className="eyebrow">
-            <span className="live-dot" /> Transparent Engagement
+            <span className="num">03 /</span> PREDICTABLE SERVICE PACKAGES &amp; RETAINERS
           </div>
-          <h2>Simple, predictable packages.</h2>
+          <h2>Straightforward monthly retainers &amp; project caps.</h2>
           <p>
-            Choose between turnkey web and software tiers, or ongoing on-site workplace retainers.
+            No open-ended hourly billing or surprise incident surcharges. Choose a fixed turnkey delivery scope or an on-site support SLA for your office.
           </p>
 
           <div className="packages-toggle" role="tablist">

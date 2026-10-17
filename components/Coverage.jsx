@@ -14,17 +14,15 @@ export default function Coverage({ onOpenRequest }) {
         <div className="section-header-split">
           <div className="section-header-copy">
             <div className="eyebrow">
-              <span className="live-dot" /> Geographic &amp; Operational Reach
+              <span className="num">04 /</span> OPERATIONAL DISPATCH &amp; OVERSEAS BRIDGES
             </div>
             <h2>
-              On-site across Sri Lanka.
+              On-site in Sri Lanka.
               <br />
-              Synchronized with the world.
+              Overlapping with London, Dubai &amp; Sydney.
             </h2>
             <p>
-              Whether you need rapid physical dispatch to an office in Colombo or Kandy,
-              or a dedicated Next.js engineering pod overlapping with your working hours
-              in London, Dubai, Singapore, or Sydney.
+              Hardware dispatches reach clients in Colombo 01–15, Moratuwa, and Kandy within contracted SLAs. For international teams, our dev pods operate on UTC+05:30 with full English fluency.
             </p>
           </div>
 
