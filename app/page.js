@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ClientStrip from '@/components/ClientStrip';
+import AboutShowcase from '@/components/AboutShowcase';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import Packages from '@/components/Packages';
@@ -91,6 +92,7 @@ export default function HomePage() {
       <main id="top">
         <Hero onOpenRequest={openRequest} />
         <ClientStrip />
+        <AboutShowcase onOpenRequest={openRequest} />
         <Services onOpenRequest={openRequest} />
         <Process />
         <Packages onOpenRequest={openRequest} />
