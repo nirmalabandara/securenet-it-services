@@ -52,11 +52,11 @@ export default function AdminModal({
       <div className="admin-modal">
         <button
           type="button"
-          className="close"
+          className="modal-close-btn"
           onClick={onClose}
           aria-label="Close Admin portal"
         >
-          ×
+          &times;
         </button>
 
         <aside>
@@ -64,45 +64,46 @@ export default function AdminModal({
           <div className="admin-user">
             <span>SN</span>
             <div>
-              <b>SecureNet Admin</b>
-              <small>Administrator</small>
+              <b>SecureNet Central</b>
+              <small>Operations Desk</small>
             </div>
           </div>
 
           <nav>
             <button type="button" className="active">
-              ▦ Requests {newCount > 0 && <em>{newCount}</em>}
+              <span>&#9638; Inquiries &amp; Tickets</span>
+              {newCount > 0 && <em>{newCount}</em>}
             </button>
             <button
               type="button"
-              onClick={() => alert('Activity logging is active. All status updates are stored locally.')}
+              onClick={() => alert('Activity logging is active. All status updates are saved in browser.')}
             >
-              ◴ Activity
+              &#9700; Activity Log
             </button>
             <button
               type="button"
-              onClick={() => alert('SecureNet Settings: Island-wide dispatch active.')}
+              onClick={() => alert('SecureNet Settings: Island-wide dispatch active & +05:30 bridge standby.')}
             >
-              ⚙ Settings
+              &#9881; System Config
             </button>
           </nav>
 
           <small className="demo-note">
-            Next.js Admin Dashboard
+            SecureNet In-Page Console
             <br />
-            Data persists in your browser.
+            Data persists in browser storage.
           </small>
         </aside>
 
         <section className="admin-content">
           <div className="admin-title">
             <div>
-              <span>ADMIN PORTAL</span>
-              <h2 id="admin-portal-title">Support requests</h2>
-              <p>Review, filter and manage incoming client IT service requests.</p>
+              <span>CENTRAL COMMAND</span>
+              <h2 id="admin-portal-title">Client inquiries &amp; tickets</h2>
+              <p>Review, filter and manage incoming Sri Lankan &amp; global inquiries.</p>
             </div>
-            <button type="button" className="outline-button" onClick={onClose}>
-              Back to website
+            <button type="button" className="button button-ghost button-small" onClick={onClose}>
+              Back to site &rarr;
             </button>
           </div>
 
@@ -140,7 +141,9 @@ export default function AdminModal({
               style={{
                 padding: '8px 12px',
                 borderRadius: '6px',
-                border: '1px solid #d9e2ec',
+                border: '1px solid var(--b1)',
+                background: 'var(--s2)',
+                color: 'var(--t1)',
                 fontSize: '12px',
                 width: '240px',
               }}
@@ -149,12 +152,12 @@ export default function AdminModal({
 
           <div className="request-table" style={{ marginTop: '16px' }}>
             <div className="table-head">
-              <span>REQUEST</span>
+              <span>TICKET</span>
               <span>COMPANY / CONTACT</span>
-              <span>SERVICE</span>
-              <span>VISIT DATE</span>
+              <span>SERVICE / TIER</span>
+              <span>DATE / TIME</span>
               <span>STATUS</span>
-              <span>DETAILS</span>
+              <span>VIEW</span>
             </div>
 
             {filtered.length ? (
@@ -200,21 +203,21 @@ export default function AdminModal({
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: '#135bc5',
+                        color: 'var(--a)',
                         cursor: 'pointer',
                         fontSize: '14px',
                         padding: '4px',
                       }}
                       title="View request details"
                     >
-                      {selectedDetail?.id === r.id ? '▼' : '›'}
+                      {selectedDetail?.id === r.id ? '▲' : '▼'}
                     </button>
                   </span>
                 </div>
               ))
             ) : (
-              <div className="empty">
-                No {filter.toLowerCase()} requests matching your search.
+              <div style={{ padding: '32px', textAlign: 'center', color: 'var(--t3)' }}>
+                No {filter.toLowerCase()} inquiries found matching &ldquo;{search}&rdquo;.
               </div>
             )}
           </div>
@@ -223,11 +226,11 @@ export default function AdminModal({
             <div
               style={{
                 marginTop: '18px',
-                background: '#ffffff',
-                border: '1px solid #dce4ef',
+                background: 'var(--s2)',
+                border: '1px solid var(--b1)',
                 borderRadius: '8px',
                 padding: '20px 24px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                boxShadow: 'var(--sh-md)',
               }}
             >
               <div
@@ -238,8 +241,8 @@ export default function AdminModal({
                   marginBottom: '12px',
                 }}
               >
-                <h4 style={{ margin: 0, color: '#071e42', fontSize: '15px' }}>
-                  Request Details — {selectedDetail.id} ({selectedDetail.company})
+                <h4 style={{ margin: 0, color: 'var(--t1)', fontSize: '15px' }}>
+                  Inquiry Details &mdash; {selectedDetail.id} ({selectedDetail.company})
                 </h4>
                 <button
                   type="button"
@@ -247,12 +250,12 @@ export default function AdminModal({
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#62718a',
+                    color: 'var(--t2)',
                     cursor: 'pointer',
                     fontSize: '16px',
                   }}
                 >
-                  ✕
+                  &times;
                 </button>
               </div>
 
@@ -262,26 +265,26 @@ export default function AdminModal({
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '12px',
                   fontSize: '12px',
-                  color: '#495a72',
+                  color: 'var(--t2)',
                 }}
               >
                 <div>
-                  <strong>Contact Name:</strong> {selectedDetail.contact}
+                  <strong style={{ color: 'var(--t1)' }}>Contact Name:</strong> {selectedDetail.contact}
                 </div>
                 <div>
-                  <strong>Email:</strong> {selectedDetail.email || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Email:</strong> {selectedDetail.email || 'N/A'}
                 </div>
                 <div>
-                  <strong>Phone:</strong> {selectedDetail.phone || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Phone:</strong> {selectedDetail.phone || 'N/A'}
                 </div>
                 <div>
-                  <strong>Location:</strong> {selectedDetail.location || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Location:</strong> {selectedDetail.location || 'N/A'}
                 </div>
                 <div>
-                  <strong>Company Size:</strong> {selectedDetail.staff || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Company Size:</strong> {selectedDetail.staff || 'N/A'}
                 </div>
                 <div>
-                  <strong>Preferred Time:</strong> {selectedDetail.time || 'Flexible'}
+                  <strong style={{ color: 'var(--t1)' }}>Preferred Time:</strong> {selectedDetail.time || 'Flexible'}
                 </div>
               </div>
 
@@ -290,13 +293,15 @@ export default function AdminModal({
                   style={{
                     marginTop: '14px',
                     padding: '12px',
-                    background: '#f8fafc',
+                    background: 'var(--s1)',
+                    border: '1px solid var(--b0)',
                     borderRadius: '6px',
                     fontSize: '12px',
-                    color: '#334155',
+                    color: 'var(--t1)',
                   }}
                 >
-                  <strong>Customer Notes:</strong> {selectedDetail.notes}
+                  <strong style={{ color: 'var(--a)' }}>Client Requirements Notes:</strong>{' '}
+                  {selectedDetail.notes}
                 </div>
               )}
             </div>

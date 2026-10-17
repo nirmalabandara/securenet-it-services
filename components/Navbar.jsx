@@ -1,118 +1,143 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Logo from './Logo';
-import { EMAIL, WHATSAPP, WHATSAPP_DISPLAY } from '@/lib/constants';
+import { WHATSAPP, WHATSAPP_DISPLAY } from '@/lib/constants';
 
 export default function Navbar({ onOpenRequest, onOpenAdmin }) {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: 'Services', href: '/services' },
+    { label: 'Tiers & Pricing', href: '/pricing' },
+    { label: 'Coverage & Global', href: '/coverage' },
+    { label: 'Contact', href: '/contact' },
+  ];
 
   return (
-    <>
-      <header className="topbar">
-        <div className="shell">
-          <span className="topbar-info">
-            On-site IT support for businesses across Sri Lanka
-          </span>
-          <div className="topbar-contacts">
-            <a href={`mailto:${EMAIL}`}>
-              <span>✉</span> {EMAIL}
-            </a>
-            <span className="top-separator" />
-            <a
-              href={`https://wa.me/${WHATSAPP}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>WhatsApp:</span> {WHATSAPP_DISPLAY}
-            </a>
+    <header className={`nav-wrapper ${scrolled ? 'scrolled' : ''}`}>
+      <div className="nav shell">
+        <div className="nav-left">
+          <Logo />
+          <div className="nav-status-chip" title="Active SLA response across Sri Lanka">
+            <span className="status-dot live" />
+            <span>DISPATCH & DEV LIVE</span>
           </div>
         </div>
-      </header>
 
-      <div className="nav-wrapper">
-        <nav className="nav shell">
-          <Logo />
+        <nav className="nav-links" aria-label="Main Navigation">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`nav-link ${isActive ? 'active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
 
-          <div className="nav-links">
-            <a href="#services">Services</a>
-            <a href="#how">How it works</a>
-            <a href="#packages">Packages</a>
-            <a href="#coverage">Coverage</a>
-          </div>
+        <div className="nav-right">
+          <a
+            href={`https://wa.me/${WHATSAPP}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-whatsapp-link"
+            aria-label="Direct WhatsApp contact"
+          >
+            <span className="wa-icon">WA</span>
+            <span className="wa-number">{WHATSAPP_DISPLAY}</span>
+          </a>
 
           <button
             type="button"
-            className="button button-small"
-            onClick={() => onOpenRequest()}
+            className="button button-small nav-cta-btn"
+            onClick={() => onOpenRequest ? onOpenRequest() : (window.location.href = '/contact')}
             id="nav-request-btn"
           >
-            Request support <span>→</span>
+            Request Dispatch / Quote <span>→</span>
           </button>
 
           <button
             type="button"
             className="mobile-menu-btn"
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? '✕' : '☰'}
           </button>
-        </nav>
-
-        {mobileMenuOpen && (
-          <div
-            style={{
-              padding: '16px 24px',
-              background: '#ffffff',
-              borderTop: '1px solid #edf2f7',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
-            }}
-          >
-            <a
-              href="#services"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ textDecoration: 'none', color: '#14233d', fontWeight: 600 }}
-            >
-              Services
-            </a>
-            <a
-              href="#how"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ textDecoration: 'none', color: '#14233d', fontWeight: 600 }}
-            >
-              How it works
-            </a>
-            <a
-              href="#packages"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ textDecoration: 'none', color: '#14233d', fontWeight: 600 }}
-            >
-              Packages
-            </a>
-            <a
-              href="#coverage"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ textDecoration: 'none', color: '#14233d', fontWeight: 600 }}
-            >
-              Coverage
-            </a>
-            <button
-              type="button"
-              className="button"
-              style={{ width: '100%', marginTop: '6px' }}
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenRequest();
-              }}
-            >
-              Request support <span>→</span>
-            </button>
-          </div>
-        )}
+        </div>
       </div>
-    </>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-drawer">
+          <div className="mobile-drawer-inner shell">
+            <div className="mobile-status-row">
+              <span className="status-dot live" />
+              <span>Sri Lanka Field Support & Digital Engineering</span>
+            </div>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="mobile-nav-link"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="mobile-actions">
+              <a
+                href={`https://wa.me/${WHATSAPP}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-wa-btn"
+              >
+                WhatsApp: {WHATSAPP_DISPLAY}
+              </a>
+              <button
+                type="button"
+                className="button"
+                style={{ width: '100%' }}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenRequest ? onOpenRequest() : (window.location.href = '/contact');
+                }}
+              >
+                Request Dispatch / Quote <span>→</span>
+              </button>
+              {onOpenAdmin && (
+                <button
+                  type="button"
+                  className="mobile-admin-link"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAdmin();
+                  }}
+                >
+                  Open Dispatch Admin Portal
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

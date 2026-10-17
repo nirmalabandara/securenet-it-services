@@ -1,13 +1,15 @@
-export default function ClientStrip() {
-  const sectors = ['RETAIL', 'HEALTHCARE', 'FINANCE', 'HOSPITALITY', 'EDUCATION'];
+import { proofMetrics } from '@/lib/constants';
 
+export default function ClientStrip() {
   return (
-    <section className="client-strip">
+    <section className="proof-strip" aria-label="Operational Key Metrics">
       <div className="shell">
-        <span>BUILT FOR BUSINESSES THAT NEED TECHNOLOGY TO WORK</span>
-        <div className="sectors">
-          {sectors.map((sec) => (
-            <b key={sec}>{sec}</b>
+        <div className="proof-grid">
+          {proofMetrics.map((item, idx) => (
+            <div key={idx} className="proof-item">
+              <span className="proof-value">{item.value}</span>
+              <span className="proof-label">{item.label}</span>
+            </div>
           ))}
         </div>
       </div>

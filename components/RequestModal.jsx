@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { services } from '@/lib/constants';
+import { services, serviceTiers, infrastructurePackages } from '@/lib/constants';
 
 export default function RequestModal({ initialService = '', onClose, onSubmit }) {
   const [form, setForm] = useState({
@@ -43,7 +43,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
       contact: form.contact,
       email: form.email,
       phone: form.phone,
-      service: form.service || 'General IT Support',
+      service: form.service || 'General IT Consultation',
       staff: form.staff,
       location: form.location,
       date: form.date,
@@ -51,6 +51,9 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
       notes: form.notes,
     });
   };
+
+  const digitalServices = services.filter((s) => s.category === 'digital');
+  const infraServices = services.filter((s) => s.category === 'infrastructure');
 
   return (
     <div
@@ -65,33 +68,35 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
       <form className="request-modal" onSubmit={handleSubmit}>
         <button
           type="button"
-          className="close"
+          className="modal-close-btn"
           onClick={onClose}
           aria-label="Close request modal"
         >
-          ×
+          &times;
         </button>
-        <div className="eyebrow navy">
-          <i /> Request IT support
+        <div className="eyebrow">
+          <span className="live-dot" /> SecureNet Dispatch &amp; Engineering Scoping
         </div>
         <h2 id="request-modal-title">Tell us what your business needs.</h2>
-        <p>We will review your request and send a custom quote.</p>
+        <p className="modal-sub">
+          We will review your requirements, prepare an architecture plan or dispatch triage, and send a guaranteed quote.
+        </p>
 
         <div className="form-grid">
           <label>
-            Company name *
+            Company / Business Name *
             <input
               required
               name="company"
               value={form.company}
               onChange={update}
-              placeholder="Your company name"
+              placeholder="e.g. Lanka Trade Solutions / Mirissa Blue Villa"
               id="req-company"
             />
           </label>
 
           <label>
-            Your name *
+            Contact Person Name *
             <input
               required
               name="contact"
@@ -103,20 +108,20 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
           </label>
 
           <label>
-            Email address *
+            Email Address *
             <input
               required
               type="email"
               name="email"
               value={form.email}
               onChange={update}
-              placeholder="you@company.com"
+              placeholder="contact@company.com"
               id="req-email"
             />
           </label>
 
           <label>
-            Phone number *
+            Phone Number / WhatsApp *
             <input
               required
               type="tel"
@@ -128,8 +133,8 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
             />
           </label>
 
-          <label>
-            Service needed *
+          <label className="full-col">
+            Service or Solution Package *
             <select
               required
               name="service"
@@ -137,54 +142,73 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
               onChange={update}
               id="req-service"
             >
-              <option value="">Choose a service</option>
-              <optgroup label="Core Services">
-                {services.map((s) => (
-                  <option key={s.title} value={s.title}>
+              <option value="">Choose a practice or package...</option>
+
+              <optgroup label="Digital Engineering & Software Solutions">
+                {digitalServices.map((s) => (
+                  <option key={s.id} value={s.title}>
                     {s.title}
                   </option>
                 ))}
               </optgroup>
-              <optgroup label="Support Packages">
-                <option value="On-demand visit">On-demand visit</option>
-                <option value="Business care">Business care</option>
-                <option value="Project support">Project support</option>
+
+              <optgroup label="Software Packages & Tiers">
+                {serviceTiers.map((t) => (
+                  <option key={t.id} value={`Tier: ${t.name}`}>
+                    {t.name} &mdash; {t.tagline}
+                  </option>
+                ))}
+              </optgroup>
+
+              <optgroup label="On-Site IT Infrastructure & Field Support">
+                {infraServices.map((s) => (
+                  <option key={s.id} value={s.title}>
+                    {s.title}
+                  </option>
+                ))}
+              </optgroup>
+
+              <optgroup label="Field Support Retainers">
+                {infrastructurePackages.map((p) => (
+                  <option key={p.name} value={`Field: ${p.name}`}>
+                    {p.name}
+                  </option>
+                ))}
               </optgroup>
             </select>
           </label>
 
           <label>
-            Company size
+            Organization Size
             <select
               name="staff"
               value={form.staff}
               onChange={update}
               id="req-staff"
             >
-              <option value="">Choose size</option>
-              <option value="1–10 people">1–10 people</option>
-              <option value="11–50 people">11–50 people</option>
-              <option value="51–200 people">51–200 people</option>
-              <option value="200+ people">200+ people</option>
+              <option value="">Select company size...</option>
+              <option value="1–10 people">1–10 people (Startup / Boutique)</option>
+              <option value="11–50 people">11–50 people (Growing SMB)</option>
+              <option value="51–200 people">51–200 people (Mid-Market)</option>
+              <option value="200+ people">200+ people (Enterprise / Multi-Branch)</option>
             </select>
           </label>
 
           <label>
-            Business location *
+            Location / Target Market *
             <input
               required
               name="location"
               value={form.location}
               onChange={update}
-              placeholder="City / district (e.g., Colombo 03)"
+              placeholder="e.g. Colombo 03 / Galle / Remote (Global)"
               id="req-location"
             />
           </label>
 
           <label>
-            Preferred visit date *
+            Preferred Date
             <input
-              required
               type="date"
               name="date"
               value={form.date}
@@ -193,37 +217,52 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
             />
           </label>
 
-          <label className="full">
-            Preferred time
+          <label>
+            Preferred Time / Urgency
             <select
               name="time"
               value={form.time}
               onChange={update}
               id="req-time"
             >
-              <option value="">Choose a time</option>
+              <option value="">Select urgency...</option>
+              <option value="Immediate Emergency (< 2h)">Immediate Emergency (&lt; 2h in Colombo)</option>
               <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
               <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
-              <option value="Evening (4pm–6pm)">Evening (4pm–6pm)</option>
+              <option value="Evening (4pm–8pm)">Evening (4pm–8pm)</option>
+              <option value="Project Scoping Call">Project Scoping Call (Schedule video meeting)</option>
             </select>
           </label>
 
-          <label className="full">
-            Tell us more
+          <label className="full-col">
+            Project Scope or Outage Details
             <textarea
               name="notes"
+              rows={3}
               value={form.notes}
               onChange={update}
-              placeholder="Describe the IT issue, network setup requirements, or specific requests..."
-              rows={3}
+              placeholder="Describe your technical requirements (e.g. PayHere + Koko setup, Wi-Fi dead zones, direct booking engine, or current network interruption)..."
               id="req-notes"
             />
           </label>
         </div>
 
-        <button type="submit" className="button form-button" id="req-submit-btn">
-          Submit request <span>→</span>
-        </button>
+        <div className="modal-actions">
+          <button
+            type="button"
+            className="button button-ghost"
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="button"
+            id="req-submit"
+          >
+            Submit Request &amp; Receive Quote <span>&rarr;</span>
+          </button>
+        </div>
       </form>
     </div>
   );

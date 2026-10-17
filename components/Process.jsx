@@ -1,42 +1,60 @@
+import Icon from './Icons';
+
 export default function Process() {
   const steps = [
     {
       num: '01',
-      title: 'Tell us what you need',
-      desc: 'Select a service, share your requirements and choose a preferred time.',
+      tag: 'SCOPING & ARCHITECTURE',
+      title: 'Specify your requirements',
+      desc: 'Select your service—whether an urgent field repair or a headless e-commerce store with PayHere & Koko BNPL. Tell us your location or tech stack.',
+      timeframe: 'Avg. review: < 2 hours',
     },
     {
       num: '02',
-      title: 'Receive a custom quote',
-      desc: 'Our team reviews your request and confirms the right support plan.',
+      tag: 'FIXED TRANSPARENT QUOTE',
+      title: 'Receive clear scope & terms',
+      desc: 'No hidden surcharges. For field IT, we quote clear labor and parts beforehand. For digital software, we deliver a documented milestone roadmap.',
+      timeframe: 'Guaranteed upfront pricing',
     },
     {
       num: '03',
-      title: 'We send the right expert',
-      desc: 'A qualified SecureNet professional arrives ready to get things working.',
+      tag: 'DEPLOYMENT & SLA',
+      title: 'We dispatch or initiate the build',
+      desc: 'A certified hardware engineer arrives at your Sri Lankan office premises, or your dedicated Next.js engineering team begins sprint cycle one.',
+      timeframe: '< 2h Colombo / 48h Dev kick-off',
     },
   ];
 
   return (
-    <section id="how" className="process">
+    <section id="how" className="section-process">
       <div className="shell">
-        <div className="process-intro">
-          <div className="eyebrow light">
-            <i /> A simple process
+        <div className="process-header">
+          <div className="eyebrow">
+            <span className="live-dot" /> High-Velocity Execution
           </div>
-          <h2>
-            Expert help, without the
-            <br />
-            runaround.
-          </h2>
+          <h2>Zero friction from inquiry to resolution.</h2>
+          <p>
+            Whether your server rack just collapsed or you need a direct booking engine
+            live before peak tourist season.
+          </p>
         </div>
 
-        <div className="steps">
-          {steps.map((st) => (
-            <div key={st.num}>
-              <b>{st.num}</b>
-              <h3>{st.title}</h3>
-              <p>{st.desc}</p>
+        <div className="timeline-rail">
+          {steps.map((st, idx) => (
+            <div key={st.num} className="timeline-step">
+              <div className="step-node-row">
+                <span className="step-node">{st.num}</span>
+                {idx < steps.length - 1 && <span className="step-connector" />}
+              </div>
+              <div className="step-card">
+                <span className="step-meta-tag">{st.tag}</span>
+                <h3>{st.title}</h3>
+                <p>{st.desc}</p>
+                <div className="step-timeframe">
+                  <Icon name="zap" size={13} className="timeframe-icon" />
+                  <span>{st.timeframe}</span>
+                </div>
+              </div>
             </div>
           ))}
         </div>

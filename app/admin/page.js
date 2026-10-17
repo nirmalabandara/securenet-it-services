@@ -70,7 +70,7 @@ export default function AdminPage() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f0f4f9', padding: '30px 16px' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg)', padding: '30px 16px' }}>
       <div
         className="admin-modal"
         style={{ margin: '0 auto', minHeight: '80vh', maxWidth: '1200px' }}
@@ -80,47 +80,51 @@ export default function AdminPage() {
           <div className="admin-user">
             <span>SN</span>
             <div>
-              <b>SecureNet Admin</b>
-              <small>Administrator</small>
+              <b>SecureNet Operations</b>
+              <small>Dispatch &amp; Dev Desk</small>
             </div>
           </div>
 
           <nav>
             <button type="button" className="active">
-              ▦ Requests {newCount > 0 && <em>{newCount}</em>}
+              <span>&#9638; Inquiries &amp; Tickets</span>
+              {newCount > 0 && <em>{newCount}</em>}
             </button>
             <Link
               href="/"
               style={{
                 textDecoration: 'none',
-                color: '#b5c4db',
+                color: 'var(--t2)',
                 padding: '10px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
                 display: 'block',
                 borderRadius: '6px',
+                border: '1px solid var(--b1)',
+                background: 'var(--s2)',
+                marginTop: '12px',
               }}
             >
-              ← Back to Main Website
+              &larr; Return to Live Site
             </Link>
           </nav>
 
           <small className="demo-note">
-            Next.js Dedicated Admin
+            SecureNet Central Console
             <br />
-            Data persists in your browser.
+            Data persists in your browser storage.
           </small>
         </aside>
 
         <section className="admin-content">
           <div className="admin-title">
             <div>
-              <span>ADMIN PORTAL</span>
-              <h2>Support requests</h2>
-              <p>Manage and process client support inquiries island-wide.</p>
+              <span>DISPATCH &amp; DEV OPERATIONS</span>
+              <h2>Client inquiries &amp; requests</h2>
+              <p>Review, filter and manage incoming Sri Lankan &amp; global inquiries.</p>
             </div>
-            <Link href="/" className="outline-button">
-              Visit Website
+            <Link href="/" className="button button-ghost button-small">
+              Visit Website &rarr;
             </Link>
           </div>
 
@@ -152,27 +156,29 @@ export default function AdminPage() {
 
             <input
               type="text"
-              placeholder="Search by company, ID, or name..."
+              placeholder="Search by company, ID, or service..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{
                 padding: '8px 12px',
                 borderRadius: '6px',
-                border: '1px solid #d9e2ec',
+                border: '1px solid var(--b1)',
+                background: 'var(--s2)',
+                color: 'var(--t1)',
                 fontSize: '12px',
-                width: '260px',
+                width: '280px',
               }}
             />
           </div>
 
           <div className="request-table" style={{ marginTop: '16px' }}>
             <div className="table-head">
-              <span>REQUEST</span>
-              <span>COMPANY / CONTACT</span>
-              <span>SERVICE</span>
-              <span>VISIT DATE</span>
+              <span>TICKET</span>
+              <span>COMPANY / CLIENT</span>
+              <span>SERVICE / TIER</span>
+              <span>DATE / TIME</span>
               <span>STATUS</span>
-              <span>DETAILS</span>
+              <span>VIEW</span>
             </div>
 
             {filtered.length ? (
@@ -193,7 +199,7 @@ export default function AdminPage() {
                     {r.location && <small>{r.location}</small>}
                   </span>
                   <span>
-                    <b>{r.date || 'To be confirmed'}</b>
+                    <b>{r.date || 'To be scheduled'}</b>
                     {r.time && <small>{r.time}</small>}
                   </span>
                   <span>
@@ -218,21 +224,21 @@ export default function AdminPage() {
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: '#135bc5',
+                        color: 'var(--a)',
                         cursor: 'pointer',
                         fontSize: '14px',
                         padding: '4px',
                       }}
-                      title="View request details"
+                      title="Toggle details"
                     >
-                      {selectedDetail?.id === r.id ? '▼' : '›'}
+                      {selectedDetail?.id === r.id ? '▲' : '▼'}
                     </button>
                   </span>
                 </div>
               ))
             ) : (
-              <div className="empty">
-                No {filter.toLowerCase()} requests matching your search.
+              <div style={{ padding: '32px', textAlign: 'center', color: 'var(--t3)' }}>
+                No {filter.toLowerCase()} inquiries found matching &ldquo;{search}&rdquo;.
               </div>
             )}
           </div>
@@ -241,11 +247,11 @@ export default function AdminPage() {
             <div
               style={{
                 marginTop: '18px',
-                background: '#ffffff',
-                border: '1px solid #dce4ef',
+                background: 'var(--s2)',
+                border: '1px solid var(--b1)',
                 borderRadius: '8px',
                 padding: '20px 24px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                boxShadow: 'var(--sh-md)',
               }}
             >
               <div
@@ -256,8 +262,8 @@ export default function AdminPage() {
                   marginBottom: '12px',
                 }}
               >
-                <h4 style={{ margin: 0, color: '#071e42', fontSize: '15px' }}>
-                  Request Details — {selectedDetail.id} ({selectedDetail.company})
+                <h4 style={{ margin: 0, color: 'var(--t1)', fontSize: '15px' }}>
+                  Inquiry Details &mdash; {selectedDetail.id} ({selectedDetail.company})
                 </h4>
                 <button
                   type="button"
@@ -265,12 +271,12 @@ export default function AdminPage() {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#62718a',
+                    color: 'var(--t2)',
                     cursor: 'pointer',
                     fontSize: '16px',
                   }}
                 >
-                  ✕
+                  &times;
                 </button>
               </div>
 
@@ -280,26 +286,26 @@ export default function AdminPage() {
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '12px',
                   fontSize: '12px',
-                  color: '#495a72',
+                  color: 'var(--t2)',
                 }}
               >
                 <div>
-                  <strong>Contact Name:</strong> {selectedDetail.contact}
+                  <strong style={{ color: 'var(--t1)' }}>Contact Name:</strong> {selectedDetail.contact}
                 </div>
                 <div>
-                  <strong>Email:</strong> {selectedDetail.email || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Email:</strong> {selectedDetail.email || 'N/A'}
                 </div>
                 <div>
-                  <strong>Phone:</strong> {selectedDetail.phone || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Phone:</strong> {selectedDetail.phone || 'N/A'}
                 </div>
                 <div>
-                  <strong>Location:</strong> {selectedDetail.location || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Location:</strong> {selectedDetail.location || 'N/A'}
                 </div>
                 <div>
-                  <strong>Company Size:</strong> {selectedDetail.staff || 'N/A'}
+                  <strong style={{ color: 'var(--t1)' }}>Organization Size:</strong> {selectedDetail.staff || 'N/A'}
                 </div>
                 <div>
-                  <strong>Preferred Time:</strong> {selectedDetail.time || 'Flexible'}
+                  <strong style={{ color: 'var(--t1)' }}>Preferred Time:</strong> {selectedDetail.time || 'Flexible'}
                 </div>
               </div>
 
@@ -308,13 +314,15 @@ export default function AdminPage() {
                   style={{
                     marginTop: '14px',
                     padding: '12px',
-                    background: '#f8fafc',
+                    background: 'var(--s1)',
+                    border: '1px solid var(--b0)',
                     borderRadius: '6px',
                     fontSize: '12px',
-                    color: '#334155',
+                    color: 'var(--t1)',
                   }}
                 >
-                  <strong>Customer Notes:</strong> {selectedDetail.notes}
+                  <strong style={{ color: 'var(--a)' }}>Client Requirements Notes:</strong>{' '}
+                  {selectedDetail.notes}
                 </div>
               )}
             </div>

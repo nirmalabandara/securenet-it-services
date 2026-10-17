@@ -1,22 +1,26 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'SecureNet IT Services | On-site IT Support Across Sri Lanka',
+  title: 'SecureNet Technologies | On-Site IT, Digital Engineering & Software Solutions Sri Lanka',
   description:
-    'Rapid and dependable on-site IT support for businesses across Sri Lanka. Emergency fixes, network & Wi-Fi setup, managed IT, cybersecurity, and hardware solutions.',
+    'Rapid on-site IT support across Sri Lanka (< 2h in Colombo) and bespoke digital engineering: PayHere/Koko e-commerce, WhatsApp automation, boutique hotel booking engines, ERP portals, and offshore engineering pods.',
   keywords: [
     'IT support Sri Lanka',
     'on-site IT services Colombo',
-    'office network setup',
-    'business Wi-Fi Kandy Galle',
-    'managed IT services',
-    'cybersecurity Sri Lanka',
+    'PayHere integration Sri Lanka',
+    'Koko BNPL e-commerce',
+    'WhatsApp automation Notify.lk',
+    'villa booking engine Sri Lanka',
+    'custom ERP software Sri Lanka',
+    'Next.js developers Sri Lanka',
+    'offshore engineering pods',
+    'office network setup UniFi',
   ],
-  authors: [{ name: 'SecureNet IT Services' }],
+  authors: [{ name: 'SecureNet Technologies' }],
   openGraph: {
-    title: 'SecureNet IT Services | On-site IT Support Across Sri Lanka',
+    title: 'SecureNet Technologies | On-Site IT & Digital Product Engineering',
     description:
-      'From urgent fixes to ongoing technology care, SecureNet sends experienced IT professionals directly to your workplace anywhere in Sri Lanka.',
+      'From urgent physical IT dispatch across Sri Lanka to high-converting e-commerce, trilingual WhatsApp bots, and direct villa booking platforms.',
     type: 'website',
     locale: 'en_LK',
   },
@@ -26,7 +30,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#071e42',
+  themeColor: '#0b0d10',
   width: 'device-width',
   initialScale: 1,
 };
