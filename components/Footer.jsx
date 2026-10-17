@@ -92,19 +92,6 @@ export default function Footer({ onOpenAdmin }) {
           <Link href="/pricing">Tiers &amp; Pricing</Link>
           <Link href="/coverage">Coverage</Link>
           <Link href="/contact">Contact</Link>
-          {onOpenAdmin ? (
-            <button
-              type="button"
-              className="admin-footer-btn"
-              onClick={onOpenAdmin}
-            >
-              Dispatch Admin Portal
-            </button>
-          ) : (
-            <Link href="/admin" className="admin-footer-btn">
-              Dispatch Admin Portal
-            </Link>
-          )}
         </div>
       </div>
     </footer>

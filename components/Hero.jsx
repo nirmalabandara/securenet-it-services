@@ -34,10 +34,10 @@ export default function Hero({ onOpenRequest }) {
               onClick={() => onOpenRequest()}
               id="hero-request-btn"
             >
-              Request Quote / Dispatch
+              Request Quote
             </button>
             <Link href="/services" className="button button-ghost">
-              Explore 13 Practice Areas
+              Explore
             </Link>
           </div>
 

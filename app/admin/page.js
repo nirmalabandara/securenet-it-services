@@ -13,18 +13,46 @@ export default function AdminPage() {
   const [toast, setToast] = useState('');
   const [selectedDetail, setSelectedDetail] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [authError, setAuthError] = useState('');
 
   useEffect(() => {
     setIsMounted(true);
     try {
+      const savedAuth = sessionStorage.getItem('securenet-admin-auth');
+      if (savedAuth === 'true') {
+        setIsAuthenticated(true);
+      }
       const saved = localStorage.getItem('securenet-requests');
       if (saved) {
         setRequests(JSON.parse(saved));
       }
     } catch (e) {
-      console.warn('Could not read from localStorage', e);
+      console.warn('Could not read from storage', e);
     }
   }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Default admin access key (customizable via env or local setting)
+    if (passwordInput === 'securenet2026' || passwordInput === 'admin@123') {
+      setIsAuthenticated(true);
+      setAuthError('');
+      try {
+        sessionStorage.setItem('securenet-admin-auth', 'true');
+      } catch (e) {}
+    } else {
+      setAuthError('Incorrect security key. Access denied.');
+    }
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    try {
+      sessionStorage.removeItem('securenet-admin-auth');
+    } catch (e) {}
+  };
 
   useEffect(() => {
     if (!isMounted) return;
@@ -69,6 +97,54 @@ export default function AdminPage() {
     return requests.filter((r) => r.status === st).length;
   };
 
+  if (!isMounted) return null;
+
+  if (!isAuthenticated) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+        <div style={{ maxWidth: '420px', width: '100%', background: 'var(--s1)', border: '1px solid var(--b1)', borderRadius: '12px', padding: '32px', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
+          <div style={{ marginBottom: '24px', textAlign: 'center' }}>
+            <Logo />
+            <h2 style={{ fontSize: '20px', marginTop: '16px', color: 'var(--t1)' }}>Operations Dispatch Login</h2>
+            <p style={{ fontSize: '13px', color: 'var(--t2)', marginTop: '4px' }}>Please enter your authorized security key to access tickets.</p>
+          </div>
+
+          <form onSubmit={handleLogin}>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--t1)', marginBottom: '6px' }}>
+                Admin Security Key
+              </label>
+              <input
+                type="password"
+                required
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                placeholder="Enter password..."
+                style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--b1)', background: 'var(--s2)', color: 'var(--t1)', fontSize: '14px' }}
+              />
+            </div>
+
+            {authError && (
+              <div style={{ color: '#ef4444', fontSize: '12px', marginBottom: '16px', fontWeight: 500 }}>
+                {authError}
+              </div>
+            )}
+
+            <button type="submit" className="button" style={{ width: '100%' }}>
+              Authenticate &amp; Open Portal
+            </button>
+          </form>
+
+          <div style={{ marginTop: '20px', textAlign: 'center' }}>
+            <Link href="/" style={{ color: 'var(--t3)', fontSize: '12px', textDecoration: 'none' }}>
+              &larr; Return to Live Site
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', padding: '30px 16px' }}>
       <div
@@ -107,6 +183,26 @@ export default function AdminPage() {
             >
               Return to Live Site
             </Link>
+
+            <button
+              type="button"
+              onClick={handleLogout}
+              style={{
+                width: '100%',
+                textAlign: 'left',
+                background: 'transparent',
+                border: '1px solid var(--b1)',
+                color: '#ef4444',
+                padding: '10px 12px',
+                fontSize: '12px',
+                fontWeight: 600,
+                borderRadius: '6px',
+                cursor: 'pointer',
+                marginTop: '8px',
+              }}
+            >
+              Sign Out
+            </button>
           </nav>
 
           <small className="demo-note">

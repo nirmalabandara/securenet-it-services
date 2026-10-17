@@ -24,10 +24,36 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
     setToast(`Inquiry received for ${form.company}. Our engineering team will follow up promptly.`);
+
+    const newInquiry = {
+      ...form,
+      id: `SN-${String(Math.floor(2400 + Math.random() * 1000)).padStart(4, '0')}`,
+      status: 'New',
+      created: 'Just now',
+    };
+
+    // 1. Persist to localStorage for client-side Admin portal
+    try {
+      const existing = JSON.parse(localStorage.getItem('securenet-requests') || '[]');
+      localStorage.setItem('securenet-requests', JSON.stringify([newInquiry, ...existing]));
+    } catch (err) {
+      console.warn('Could not save to localStorage', err);
+    }
+
+    // 2. Dispatch to server API endpoint
+    try {
+      await fetch('/api/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newInquiry),
+      });
+    } catch (err) {
+      console.warn('Could not post to /api/requests', err);
+    }
   };
 
   return (

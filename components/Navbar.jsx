@@ -73,7 +73,7 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
             onClick={() => onOpenRequest ? onOpenRequest() : (window.location.href = '/contact')}
             id="nav-request-btn"
           >
-            Request Quote / Dispatch
+            Request Quote
           </button>
 
           <button
@@ -126,20 +126,8 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
                   onOpenRequest ? onOpenRequest() : (window.location.href = '/contact');
                 }}
               >
-                Request Quote / Dispatch
+                Request Quote
               </button>
-              {onOpenAdmin && (
-                <button
-                  type="button"
-                  className="mobile-admin-link"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenAdmin();
-                  }}
-                >
-                  Open Dispatch Admin Portal
-                </button>
-              )}
             </div>
           </div>
         </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://securenet-lk-services.vercel.app/sitemap.xml

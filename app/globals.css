@@ -2973,6 +2973,7 @@ a {
 @media (max-width: 768px) {
   .nav-links,
   .nav-whatsapp-link,
+  .nav-cta-btn,
   .nav-status-chip {
     display: none;
   }
@@ -3008,6 +3009,19 @@ a {
   }
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+  .contact-info-panel,
+  .contact-form-panel {
+    max-width: 100%;
+    width: 100%;
+  }
+  .subpage-filter-bar,
+  .services-filter-tabs,
+  .coverage-tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
   .rfp-grid,
   .form-grid,
