@@ -74,7 +74,7 @@ export default function Coverage({ onOpenRequest }) {
                         className="dispatch-trigger-btn"
                         onClick={() => onOpenRequest && onOpenRequest(`Dispatch to ${loc.name}`)}
                       >
-                        Dispatch &rarr;
+                        Dispatch
                       </button>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function Coverage({ onOpenRequest }) {
                   rel="noopener noreferrer"
                   className="table-wa-link"
                 >
-                  WhatsApp Fast Triage &rarr;
+                  WhatsApp Fast Triage
                 </a>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Coverage({ onOpenRequest }) {
                   className="button"
                   onClick={() => onOpenRequest && onOpenRequest('Offshore Engineering Pod')}
                 >
-                  Book Timezone Scoping Call &rarr;
+                  Book Timezone Scoping Call
                 </button>
               </div>
             </div>

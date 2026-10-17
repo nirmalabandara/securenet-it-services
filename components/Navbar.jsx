@@ -73,7 +73,7 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
             onClick={() => onOpenRequest ? onOpenRequest() : (window.location.href = '/contact')}
             id="nav-request-btn"
           >
-            Request Quote / Dispatch <span>&rarr;</span>
+            Request Quote / Dispatch
           </button>
 
           <button
@@ -126,7 +126,7 @@ export default function Navbar({ onOpenRequest, onOpenAdmin }) {
                   onOpenRequest ? onOpenRequest() : (window.location.href = '/contact');
                 }}
               >
-                Request Quote / Dispatch <span>&rarr;</span>
+                Request Quote / Dispatch
               </button>
               {onOpenAdmin && (
                 <button

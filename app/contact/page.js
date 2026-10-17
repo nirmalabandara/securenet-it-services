@@ -67,7 +67,7 @@ export default function ContactPage() {
                   className="contact-direct-link wa"
                 >
                   <Icon name="message" size={16} />
-                  <span>{WHATSAPP_DISPLAY} &rarr;</span>
+                  <span>{WHATSAPP_DISPLAY}</span>
                 </a>
               </div>
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
                 <h3>Email Engineering Desk</h3>
                 <p>Send project specifications, Figma design links, and RFQ documents.</p>
                 <a href={`mailto:${EMAIL}`} className="contact-direct-link">
-                  <span>{EMAIL} &rarr;</span>
+                  <span>{EMAIL}</span>
                 </a>
               </div>
 
@@ -210,7 +210,7 @@ export default function ContactPage() {
                     </div>
 
                     <button type="submit" className="button" style={{ width: '100%', marginTop: '16px' }}>
-                      Submit Inquiry &amp; Dispatch Request <span>&rarr;</span>
+                      Submit Inquiry &amp; Dispatch Request
                     </button>
                   </form>
                 )}

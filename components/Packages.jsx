@@ -13,12 +13,11 @@ export default function Packages({ onOpenRequest }) {
       <div className="shell">
         <div className="center-heading">
           <div className="eyebrow">
-            <span className="live-dot" /> Transparent Engagement Models
+            <span className="live-dot" /> Transparent Engagement
           </div>
-          <h2>Engineered packages tailored for Sri Lankan &amp; global businesses.</h2>
+          <h2>Simple, predictable packages.</h2>
           <p>
-            Predictable scope, rapid turnarounds, and zero hidden costs.
-            Choose between turnkey digital software tiers or ongoing on-site workplace retainers.
+            Choose between turnkey web and software tiers, or ongoing on-site workplace retainers.
           </p>
 
           <div className="packages-toggle" role="tablist">
@@ -27,14 +26,14 @@ export default function Packages({ onOpenRequest }) {
               className={`toggle-btn ${tierType === 'digital' ? 'active' : ''}`}
               onClick={() => setTierType('digital')}
             >
-              Digital &amp; Software Tiers (4)
+              Software Tiers (4)
             </button>
             <button
               type="button"
               className={`toggle-btn ${tierType === 'infrastructure' ? 'active' : ''}`}
               onClick={() => setTierType('infrastructure')}
             >
-              On-Site IT Infrastructure (3)
+              On-Site IT Retainers (3)
             </button>
           </div>
         </div>
@@ -46,19 +45,12 @@ export default function Packages({ onOpenRequest }) {
                 key={tier.id}
                 className={`package-card ${tier.accent ? 'featured' : ''}`}
               >
-                {tier.accent && <div className="card-popular-badge">RECOMMENDED FOR COMMERCE</div>}
                 <div className="tier-header">
-                  <span className="tier-badge-label">{tier.badge}</span>
-                  <h3>{tier.name}</h3>
+                  <div className="tier-top-row">
+                    <h3>{tier.name}</h3>
+                    <span className="tier-badge-pill">{tier.badge}</span>
+                  </div>
                   <p className="tier-tagline">{tier.tagline}</p>
-                </div>
-
-                <div className="tier-meta-box">
-                  <span className="meta-label">IDEAL FOR:</span>
-                  <span className="meta-value">{tier.bestFor}</span>
-                  <div className="meta-divider" />
-                  <span className="meta-label">DELIVERY:</span>
-                  <span className="meta-value-mono">{tier.delivery}</span>
                 </div>
 
                 <ul className="tier-features-list">
@@ -72,10 +64,10 @@ export default function Packages({ onOpenRequest }) {
 
                 <button
                   type="button"
-                  className={`button ${tier.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
+                  className={`button button-small ${tier.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
                   onClick={() => onOpenRequest(tier.name)}
                 >
-                  Request Tier Quote <span>&rarr;</span>
+                  Request Quote
                 </button>
               </article>
             ))}
@@ -87,10 +79,11 @@ export default function Packages({ onOpenRequest }) {
                 key={pkg.name}
                 className={`package-card ${pkg.accent ? 'featured' : ''}`}
               >
-                {pkg.accent && <div className="card-popular-badge">MOST POPULAR CONTRACT</div>}
                 <div className="tier-header">
-                  <span className="tier-badge-label">FIELD SUPPORT</span>
-                  <h3>{pkg.name}</h3>
+                  <div className="tier-top-row">
+                    <h3>{pkg.name}</h3>
+                    {pkg.accent && <span className="tier-badge-pill popular">Popular</span>}
+                  </div>
                   <p className="tier-tagline">{pkg.intro}</p>
                 </div>
 
@@ -105,10 +98,10 @@ export default function Packages({ onOpenRequest }) {
 
                 <button
                   type="button"
-                  className={`button ${pkg.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
+                  className={`button button-small ${pkg.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
                   onClick={() => onOpenRequest(pkg.name)}
                 >
-                  Get Custom Retainer Quote <span>&rarr;</span>
+                  Get Retainer Quote
                 </button>
               </article>
             ))}
@@ -116,9 +109,9 @@ export default function Packages({ onOpenRequest }) {
         )}
 
         <div className="packages-matrix-link-bar">
-          <span>Need custom SLA terms, offshore pod agreements, or multi-site branch pricing?</span>
+          <span>Need custom SLA agreements or offshore pod terms?</span>
           <Link href="/pricing" className="text-link-bright">
-            View Complete Comparison Matrix <span>&rarr;</span>
+            Compare All Plans
           </Link>
         </div>
       </div>

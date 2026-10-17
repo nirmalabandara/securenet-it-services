@@ -19,34 +19,29 @@ export default function Services({ onOpenRequest }) {
         <div className="section-header-split">
           <div className="section-header-copy">
             <div className="eyebrow">
-              <span className="live-dot" /> Comprehensive Capabilities
+              <span className="live-dot" /> Practical Capabilities
             </div>
             <h2>
-              Engineering, software &amp;
+              Software engineering &amp;
               <br />
-              field infrastructure.
+              hands-on IT support.
             </h2>
             <p>
-              Two specialized divisions under one roof: on-site field engineers who
-              physically resolve hardware and network outages, and digital product
-              engineers who build high-growth web, commerce, and automation systems.
+              Direct field engineers stationed across Sri Lanka, and software engineers
+              building high-converting web apps, payment flows, and business portals.
             </p>
           </div>
 
           <div className="services-filter-tabs" role="tablist">
             <button
               type="button"
-              role="tab"
-              aria-selected={activeCategory === 'all'}
               className={`filter-tab ${activeCategory === 'all' ? 'active' : ''}`}
               onClick={() => setActiveCategory('all')}
             >
-              All Capabilities (13)
+              All Services ({services.length})
             </button>
             <button
               type="button"
-              role="tab"
-              aria-selected={activeCategory === 'digital'}
               className={`filter-tab ${activeCategory === 'digital' ? 'active' : ''}`}
               onClick={() => setActiveCategory('digital')}
             >
@@ -54,28 +49,23 @@ export default function Services({ onOpenRequest }) {
             </button>
             <button
               type="button"
-              role="tab"
-              aria-selected={activeCategory === 'infrastructure'}
               className={`filter-tab ${activeCategory === 'infrastructure' ? 'active' : ''}`}
               onClick={() => setActiveCategory('infrastructure')}
             >
-              On-Site IT &amp; Field (6)
+              On-Site IT (6)
             </button>
           </div>
         </div>
 
-        {/* Bento / Services Grid */}
+        {/* Streamlined Bento Grid */}
         <div className="services-bento-grid">
-          {filteredServices.map((service, index) => {
+          {filteredServices.map((service) => {
             const isAnchor = service.id === 'ecommerce-payments' && activeCategory !== 'infrastructure';
-            const isEmergency = service.id === 'emergency-it';
 
             return (
               <article
                 key={service.id}
-                className={`service-card ${isAnchor ? 'card-anchor' : ''} ${
-                  isEmergency ? 'card-emergency' : ''
-                }`}
+                className={`service-card ${isAnchor ? 'card-anchor' : ''}`}
               >
                 <div className="card-top">
                   <div className="service-icon-box" aria-hidden="true">
@@ -85,16 +75,13 @@ export default function Services({ onOpenRequest }) {
                 </div>
 
                 <div className="card-content">
-                  <span className="service-category-label">
-                    {service.category === 'digital' ? 'DIGITAL & SOFTWARE' : 'ON-SITE INFRASTRUCTURE'}
-                  </span>
                   <h3>{service.title}</h3>
                   <p className="service-summary">{service.summary}</p>
 
                   <div className="service-features-list">
-                    {service.features.slice(0, isAnchor ? 4 : 2).map((feat, fIdx) => (
+                    {service.features.slice(0, 2).map((feat, fIdx) => (
                       <div key={fIdx} className="feature-bullet">
-                        <Icon name="check" size={13} className="bullet-check" />
+                        <Icon name="check" size={12} className="bullet-check" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -102,7 +89,7 @@ export default function Services({ onOpenRequest }) {
 
                   {service.techStack && (
                     <div className="tech-pills-row">
-                      {service.techStack.slice(0, 4).map((tech, tIdx) => (
+                      {service.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span key={tIdx} className="tech-pill">
                           {tech}
                         </span>
@@ -118,8 +105,7 @@ export default function Services({ onOpenRequest }) {
                     onClick={() => onOpenRequest(service.title)}
                     aria-label={`Request ${service.title}`}
                   >
-                    <span>Request Quote / Dispatch</span>
-                    <Icon name="arrow-right" size={14} />
+                    <span>Request Quote</span>
                   </button>
                 </div>
               </article>
@@ -129,19 +115,19 @@ export default function Services({ onOpenRequest }) {
 
         <div className="services-bottom-cta">
           <div className="bottom-cta-text">
-            <h4>Need a specialized integration or custom technical RFP?</h4>
-            <p>We provide full scoping, architecture documents, and fixed timeline quotes.</p>
+            <h4>Have a custom project scope or urgent hardware breakdown?</h4>
+            <p>We review requirements and provide a clear quote within 2 hours.</p>
           </div>
           <div className="bottom-cta-actions">
-            <Link href="/services" className="button button-ghost">
-              View Detailed Specs <span>&rarr;</span>
+            <Link href="/services" className="button button-ghost button-small">
+              View Detailed Specs
             </Link>
             <button
               type="button"
-              className="button"
+              className="button button-small"
               onClick={() => onOpenRequest()}
             >
-              Start Free Scoping <span>&rarr;</span>
+              Start Free Scoping
             </button>
           </div>
         </div>

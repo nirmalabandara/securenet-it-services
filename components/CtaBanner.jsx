@@ -27,7 +27,7 @@ export default function CtaBanner({ onOpenRequest }) {
               onClick={() => onOpenRequest ? onOpenRequest() : (window.location.href = '/contact')}
               id="cta-request-btn"
             >
-              Request Support / Quote <span>&rarr;</span>
+              Request Support / Quote
             </button>
 
             <a

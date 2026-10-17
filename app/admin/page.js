@@ -105,7 +105,7 @@ export default function AdminPage() {
                 marginTop: '12px',
               }}
             >
-              &larr; Return to Live Site
+              Return to Live Site
             </Link>
           </nav>
 
@@ -124,7 +124,7 @@ export default function AdminPage() {
               <p>Review, filter and manage incoming Sri Lankan &amp; global inquiries.</p>
             </div>
             <Link href="/" className="button button-ghost button-small">
-              Visit Website &rarr;
+              Visit Website
             </Link>
           </div>
 

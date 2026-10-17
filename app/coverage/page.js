@@ -80,7 +80,7 @@ export default function CoveragePage() {
                       className="dispatch-trigger-btn"
                       onClick={() => openRequest(`On-demand dispatch to ${loc.name}`)}
                     >
-                      Request Dispatch &rarr;
+                      Request Dispatch
                     </button>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function CoveragePage() {
                 rel="noopener noreferrer"
                 className="button button-wa"
               >
-                WhatsApp Emergency Desk ({WHATSAPP_DISPLAY}) &rarr;
+                WhatsApp Emergency Desk ({WHATSAPP_DISPLAY})
               </a>
             </div>
           </div>

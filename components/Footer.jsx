@@ -58,7 +58,7 @@ export default function Footer({ onOpenAdmin }) {
               rel="noopener noreferrer"
               className="footer-wa-link"
             >
-              {WHATSAPP_DISPLAY} &rarr;
+              {WHATSAPP_DISPLAY}
             </a>
           </div>
 

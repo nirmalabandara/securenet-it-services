@@ -103,7 +103,7 @@ export default function AdminModal({
               <p>Review, filter and manage incoming Sri Lankan &amp; global inquiries.</p>
             </div>
             <button type="button" className="button button-ghost button-small" onClick={onClose}>
-              Back to site &rarr;
+              Back to site
             </button>
           </div>
 

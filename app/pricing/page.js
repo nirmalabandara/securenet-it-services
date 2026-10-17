@@ -122,7 +122,7 @@ export default function PricingPage() {
                       className={`button ${tier.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
                       onClick={() => openRequest(`Tier: ${tier.name}`)}
                     >
-                      Request Detailed Scope &amp; Quote <span>&rarr;</span>
+                      Request Detailed Scope &amp; Quote
                     </button>
                   </div>
                 </article>
@@ -174,7 +174,7 @@ export default function PricingPage() {
                       className={`button ${pkg.accent ? 'tier-btn-primary' : 'tier-btn-outline'}`}
                       onClick={() => openRequest(`Field: ${pkg.name}`)}
                     >
-                      Get Retainer Agreement <span>&rarr;</span>
+                      Get Retainer Agreement
                     </button>
                   </div>
                 </article>
@@ -219,7 +219,7 @@ export default function PricingPage() {
                   className="button"
                   onClick={() => openRequest('Dedicated Engineer Retainer')}
                 >
-                  Schedule Developer Interview <span>&rarr;</span>
+                  Schedule Developer Interview
                 </button>
               </div>
 
@@ -247,7 +247,7 @@ export default function PricingPage() {
                   className="button tier-btn-primary"
                   onClick={() => openRequest('3-4 Week MVP Sprint')}
                 >
-                  Book MVP Scoping Session <span>&rarr;</span>
+                  Book MVP Scoping Session
                 </button>
               </div>
             </div>

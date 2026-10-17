@@ -260,7 +260,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
             className="button"
             id="req-submit"
           >
-            Submit Request &amp; Receive Quote <span>&rarr;</span>
+            Submit Request &amp; Receive Quote
           </button>
         </div>
       </form>

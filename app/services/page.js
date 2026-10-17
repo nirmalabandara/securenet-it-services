@@ -132,7 +132,7 @@ export default function ServicesPage() {
                       className="button button-small"
                       onClick={() => openRequest(service.title)}
                     >
-                      Request Scope &amp; Quote <span>&rarr;</span>
+                      Request Scope &amp; Quote
                     </button>
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                       rel="noopener noreferrer"
                       className="button button-ghost button-small"
                     >
-                      WhatsApp Consultation <span>&rarr;</span>
+                      WhatsApp Consultation
                     </a>
                   </div>
                 </article>
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                       className="button button-small"
                       onClick={() => openRequest(service.title)}
                     >
-                      Dispatch Engineer / Quote <span>&rarr;</span>
+                      Dispatch Engineer / Quote
                     </button>
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                       rel="noopener noreferrer"
                       className="button button-ghost button-small"
                     >
-                      Urgent WhatsApp Dispatch <span>&rarr;</span>
+                      Urgent WhatsApp Dispatch
                     </a>
                   </div>
                 </article>
@@ -233,7 +233,7 @@ export default function ServicesPage() {
               className="button"
               onClick={() => openRequest()}
             >
-              Start Technical Scoping <span>&rarr;</span>
+              Start Technical Scoping
             </button>
           </div>
         </section>

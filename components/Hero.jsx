@@ -34,10 +34,10 @@ export default function Hero({ onOpenRequest }) {
               onClick={() => onOpenRequest()}
               id="hero-request-btn"
             >
-              Request Quote / Dispatch <span>&rarr;</span>
+              Request Quote / Dispatch
             </button>
             <Link href="/services" className="button button-ghost">
-              Explore 13 Practice Areas <span>&darr;</span>
+              Explore 13 Practice Areas
             </Link>
           </div>
 
@@ -254,7 +254,7 @@ export default function Hero({ onOpenRequest }) {
               className="showcase-cta-btn"
               onClick={() => onOpenRequest()}
             >
-              Get Custom Proposal &rarr;
+              Get Custom Proposal
             </button>
           </div>
         </div>
