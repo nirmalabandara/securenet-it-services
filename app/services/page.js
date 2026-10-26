@@ -126,6 +126,31 @@ export default function ServicesPage() {
                     </div>
                   )}
 
+                  {service.caseStudy && (
+                    <div className="service-case-study-banner">
+                      <div className="case-banner-left">
+                        <span className="case-banner-pill">
+                          <span className="live-dot" /> PROVEN PRODUCTION CASE STUDY
+                        </span>
+                        <h4>{service.caseStudy.client} ({service.caseStudy.displayUrl})</h4>
+                        <p>{service.caseStudy.summary}</p>
+                      </div>
+                      <div className="case-banner-right">
+                        <Link href="/portfolio" className="button button-small">
+                          Explore Case Study &rarr;
+                        </Link>
+                        <a
+                          href={service.caseStudy.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="button button-ghost button-small"
+                        >
+                          Visit Live Store &#8599;
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="item-actions">
                     <button
                       type="button"

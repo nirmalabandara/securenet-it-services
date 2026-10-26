@@ -56,7 +56,12 @@ export default function Services({ onOpenRequest }) {
             <div className="featured-card-overlay">
               <span className="card-badge-glow">01 / COMMERCE</span>
               <h3>E-Commerce &amp; Local IPG</h3>
-              <p>Next.js storefronts wired directly into PayHere, Koko BNPL, and trilingual WhatsApp order automation.</p>
+              <p>Next.js &amp; WooCommerce storefronts wired directly into PayHere, Koko BNPL, and trilingual WhatsApp order automation.</p>
+              
+              <Link href="/portfolio" className="card-case-study-pill">
+                <span className="live-dot" /> Case Study: Snap Cap Store ↗
+              </Link>
+
               <button
                 type="button"
                 className="card-explore-btn"
@@ -158,6 +163,14 @@ export default function Services({ onOpenRequest }) {
                     </div>
                   ))}
                 </div>
+
+                {service.caseStudy && (
+                  <div className="service-case-study-callout">
+                    <Link href="/portfolio" className="case-study-inline-link">
+                      <span className="live-dot" /> Case: <strong>{service.caseStudy.client}</strong> ↗
+                    </Link>
+                  </div>
+                )}
 
                 <button
                   type="button"

@@ -23,6 +23,7 @@ export default function Navbar({ onOpenRequest }) {
 
   const navLinks = [
     { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
     { label: 'Tiers & Pricing', href: '/pricing' },
     { label: 'Coverage & Global', href: '/coverage' },
     { label: 'Contact', href: '/contact' },

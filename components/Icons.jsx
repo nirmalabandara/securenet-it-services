@@ -138,6 +138,22 @@ export default function Icon({ name, size = 18, className = '' }) {
           <polyline points="12 5 19 12 12 19" />
         </svg>
       );
+    case 'external':
+      return (
+        <svg {...props}>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
+      );
+    case 'bag':
+      return (
+        <svg {...props}>
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+      );
     default:
       return (
         <svg {...props}>

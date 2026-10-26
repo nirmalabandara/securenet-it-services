@@ -27,6 +27,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Web &amp; Software Platforms</h4>
           <ul className="footer-nav-list">
+            <li><Link href="/portfolio">Case Study: Snap Cap Store</Link></li>
             <li><Link href="/services#ecommerce-payments">E-Commerce &amp; PayHere/Koko</Link></li>
             <li><Link href="/services#whatsapp-automation">WhatsApp &amp; SMS Automation</Link></li>
             <li><Link href="/services#hospitality-booking">Villa Direct Booking Engines</Link></li>
@@ -87,6 +88,7 @@ export default function Footer() {
 
         <div className="footer-bottom-links">
           <Link href="/services">Services</Link>
+          <Link href="/portfolio">Portfolio</Link>
           <Link href="/pricing">Tiers &amp; Pricing</Link>
           <Link href="/coverage">Coverage</Link>
           <Link href="/contact">Contact</Link>
