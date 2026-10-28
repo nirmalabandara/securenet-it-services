@@ -1,23 +1,15 @@
 export default function ClientStrip() {
-  const stats = [
-    { value: '3.5K+', label: 'Projects Completed Across Lanka' },
-    { value: '286+', label: 'Active Corporate Clients' },
-    { value: '98.8%', label: 'SLA Uptime & On-Time Arrival' },
-    { value: '32+', label: 'Certified On-Site Engineers' }
-  ];
+  const focusAreas = ['Web platforms & e-commerce', 'Payments & customer messaging', 'Workplace networks & IT support'];
 
   return (
-    <section className="proof-strip-modern" aria-label="Key Enterprise Metrics">
+    <section className="focus-strip" aria-label="SecureNet focus areas">
       <div className="shell">
-        <div className="proof-intro-center">
-          <span>THE NUMBERS REFLECT OUR REPUTATION</span>
-        </div>
-        <div className="proof-modern-grid">
-          {stats.map((item, idx) => (
-            <div key={idx} className="proof-modern-col">
-              <span className="proof-modern-value">{item.value}</span>
-              <span className="proof-modern-label">{item.label}</span>
-            </div>
+        <p>Work that crosses the screen and the workplace.</p>
+        <div>
+          {focusAreas.map((item) => (
+            <span key={item} className="focus-strip-item">
+              {item}
+            </span>
           ))}
         </div>
       </div>

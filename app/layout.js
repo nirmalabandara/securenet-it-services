@@ -3,7 +3,7 @@ import './globals.css';
 export const metadata = {
   title: 'SecureNet Technologies | Web & Software Engineering Studio Colombo',
   description:
-    'Colombo Engineering Studio delivering bespoke web platforms, e-commerce with PayHere & Koko BNPL, WhatsApp automation, direct villa booking engines, and < 2h architecture reviews.',
+    'Colombo engineering studio for web platforms, workplace IT support, payment integration, and practical business systems.',
   keywords: [
     'Web development Sri Lanka',
     'Next.js developers Colombo',
@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: 'SecureNet Technologies | Colombo Engineering Studio & Software Platforms',
     description:
-      'Turnkey web engineering: < 2h architecture review, 7-day web platform delivery, PayHere/Koko checkouts, and offshore engineering pods.',
+      'Web platforms, workplace IT support, payment integration, and practical business systems from Colombo.',
     type: 'website',
     locale: 'en_LK',
   },

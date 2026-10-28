@@ -75,11 +75,11 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
           &times;
         </button>
         <div className="eyebrow">
-          <span className="live-dot" /> SecureNet Dispatch &amp; Engineering Scoping
+          SecureNet enquiry
         </div>
         <h2 id="request-modal-title">Tell us what your business needs.</h2>
         <p className="modal-sub">
-          We will review your requirements, prepare an architecture plan or dispatch triage, and send a guaranteed quote.
+          Share the basics and we will review the request before preparing a custom quote.
         </p>
 
         <div className="form-grid">
@@ -155,7 +155,7 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
               <optgroup label="Turnkey Software Tiers">
                 {serviceTiers.map((t) => (
                   <option key={t.id} value={`Tier: ${t.name}`}>
-                    {t.name} &mdash; {t.tagline}
+                    {t.name}: {t.tagline}
                   </option>
                 ))}
               </optgroup>
@@ -226,8 +226,8 @@ export default function RequestModal({ initialService = '', onClose, onSubmit })
               id="req-time"
             >
               <option value="">Select urgency...</option>
-              <option value="Fast Technical Review (< 2h)">&lt; 2h Fast Technical &amp; Architecture Review</option>
-              <option value="7-Day Turnkey Delivery">7-Day Turnkey Web Delivery Sprint</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Planning a project">Planning a project</option>
               <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
               <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
               <option value="Evening (4pm–8pm)">Evening (4pm–8pm)</option>

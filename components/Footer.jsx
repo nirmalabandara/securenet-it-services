@@ -9,13 +9,11 @@ export default function Footer() {
         <div className="footer-col brand-col">
           <Logo />
           <p className="brand-mission">
-            Enterprise on-site IT support and digital product engineering for forward-thinking
-            businesses across Sri Lanka and worldwide.
+            On-site IT support and practical digital systems for businesses across Sri Lanka.
           </p>
 
           <div className="footer-status-pill">
-            <span className="status-dot live" />
-            <span>&lt; 2h Technical Review &middot; 7-Day Web Delivery</span>
+            <span>Quotes are prepared around your requirements.</span>
           </div>
 
           <div className="footer-tz-badge">
@@ -76,7 +74,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-hours">
-            <span>Engineering Standby: 24/7/365</span>
+            <span>Contact us to discuss your requirements.</span>
           </div>
         </div>
       </div>

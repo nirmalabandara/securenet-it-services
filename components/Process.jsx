@@ -1,19 +1,19 @@
 export default function Process() {
   const steps = [
     {
-      num: '01',
-      title: 'Tell us what you need',
-      desc: 'Share your issue or project requirements online or directly via WhatsApp.',
+      num: 'A',
+      title: 'Start with the actual situation',
+      desc: 'Tell us what is changing, what is not working, or what you need to launch.',
     },
     {
-      num: '02',
-      title: 'Receive a technical review',
-      desc: '< 2h architecture review, database schema evaluation, and fixed project quote.',
+      num: 'B',
+      title: 'Get a useful scope',
+      desc: 'We discuss the work, the constraints, and the next steps before any commitment.',
     },
     {
-      num: '03',
-      title: '7-Day Turnkey Delivery',
-      desc: 'Rapid development sprint deployed directly to production with zero friction.',
+      num: 'C',
+      title: 'Move forward with a clear plan',
+      desc: 'Once the scope is agreed, we schedule the work and keep communication direct.',
     },
   ];
 
@@ -21,10 +21,8 @@ export default function Process() {
     <section id="how" className="section-process">
       <div className="shell">
         <div className="process-header">
-          <div className="eyebrow">
-            <span className="live-dot" /> Simple Workflow
-          </div>
-          <h2>Fast execution from inquiry to delivery.</h2>
+          <p className="section-label">How an inquiry becomes work</p>
+          <h2>Start with the detail that matters.</h2>
         </div>
 
         <div className="timeline-rail">

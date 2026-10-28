@@ -34,10 +34,6 @@ export default function Navbar({ onOpenRequest }) {
       <div className="nav shell">
         <div className="nav-left">
           <Logo />
-          <div className="nav-status-chip" title="Active on-site SLA & digital engineering across Sri Lanka">
-
-            <span>ON CALL</span>
-          </div>
         </div>
 
         <nav className="nav-links" aria-label="Main Navigation">
@@ -94,7 +90,6 @@ export default function Navbar({ onOpenRequest }) {
         <div className="mobile-drawer">
           <div className="mobile-drawer-inner shell">
             <div className="mobile-status-row">
-              <span className="status-dot live" />
               <span>Sri Lanka Field Support &amp; Digital Engineering</span>
               <div style={{ marginLeft: 'auto' }}>
                 <ThemeToggle />

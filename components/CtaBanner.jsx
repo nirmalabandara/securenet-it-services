@@ -6,17 +6,15 @@ export default function CtaBanner({ onOpenRequest }) {
       <div className="shell">
         <div className="cta-architectural-bar">
           <div className="cta-copy">
-            <div className="eyebrow">
-              <span className="live-dot" /> Ready to Deploy
-            </div>
+            <div className="eyebrow">Start with a conversation</div>
             <h2>
               Technology issues should not
               <br />
               slow your business down.
             </h2>
             <p>
-              Whether you need urgent hands-on triage at your commercial office in Colombo,
-              or a high-converting web platform with local PayHere, Koko, and WhatsApp automation.
+              Tell us what needs to be improved, built, or supported. We will review the scope
+              and come back with the next practical step.
             </p>
           </div>
 

@@ -7,3 +7,13 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+<!-- antislop:start -->
+## antislop
+For UI, copy, people, mobile layout, or code comments work, read the antislop core and then the skill for the task:
+- UI / visual: `C:/Users/pathu/.codex/plugins/cache/anti-slop/antislop/3.2.24/skills/antislop-ui/SKILL.md`
+- Copy & text: `C:/Users/pathu/.codex/plugins/cache/anti-slop/antislop/3.2.24/skills/antislop-copywriting/SKILL.md`
+- People: `C:/Users/pathu/.codex/plugins/cache/anti-slop/antislop/3.2.24/skills/antislop-human/SKILL.md`
+- Mobile / responsive: `C:/Users/pathu/.codex/plugins/cache/anti-slop/antislop/3.2.24/skills/antislop-layoutmobile/SKILL.md`
+Before starting, use the antislop mode selected in the current session. For a resolved mode, say `antislop active: <mode> (session override).` or `antislop active: <mode> (global preference).` once before presenting findings or making edits.
+<!-- antislop:end -->

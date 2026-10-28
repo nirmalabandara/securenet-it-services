@@ -6,10 +6,7 @@ import Hero from '@/components/Hero';
 import ClientStrip from '@/components/ClientStrip';
 import AboutShowcase from '@/components/AboutShowcase';
 import Services from '@/components/Services';
-import PortfolioShowcase from '@/components/PortfolioShowcase';
 import Process from '@/components/Process';
-import Packages from '@/components/Packages';
-import Coverage from '@/components/Coverage';
 import CtaBanner from '@/components/CtaBanner';
 import Footer from '@/components/Footer';
 import RequestModal from '@/components/RequestModal';
@@ -95,10 +92,7 @@ export default function HomePage() {
         <ClientStrip />
         <AboutShowcase onOpenRequest={openRequest} />
         <Services onOpenRequest={openRequest} />
-        <PortfolioShowcase onOpenRequest={openRequest} />
         <Process />
-        <Packages onOpenRequest={openRequest} />
-        <Coverage onOpenRequest={openRequest} />
         <CtaBanner onOpenRequest={openRequest} />
       </main>
 
